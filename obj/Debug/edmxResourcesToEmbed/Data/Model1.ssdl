@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIENCHAFAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Atuevaluacion_demo">
+    <Key>
+      <PropertyRef Name="CLV_PARTIDA" />
+      <PropertyRef Name="ID_PROYECTO" />
+    </Key>
+    <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
+    <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+    <Property Name="TIPO_GASTO" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_CAPITULO" Type="nvarchar" MaxLength="20" />
+    <Property Name="CAPITULO" Type="nvarchar" MaxLength="100" />
+    <Property Name="CLV_PARTIDA" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PARTIDA" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_LOCALIDAD" Type="nvarchar" MaxLength="10" />
+    <Property Name="LOCALIDAD" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_FUENTE" Type="nvarchar" MaxLength="300" />
+    <Property Name="FUENTE" Type="nvarchar" MaxLength="300" />
+    <Property Name="ABR_FUENTE" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_RECURSO" Type="nvarchar" MaxLength="10" />
+    <Property Name="RECURSO" Type="nvarchar" MaxLength="300" />
+    <Property Name="ID_PROYECTO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PROYECTO" Type="nvarchar" MaxLength="1000" />
+    <Property Name="FECHA_INICIO" Type="nvarchar" MaxLength="50" />
+    <Property Name="FECHA_TERMINO" Type="nvarchar" MaxLength="50" />
+    <Property Name="N_PROGRAMA" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROGRAMA" Type="nvarchar" MaxLength="250" />
+    <Property Name="PROG_PRESUP" Type="nvarchar" MaxLength="250" />
+    <Property Name="CLV_EJE" Type="nvarchar" MaxLength="50" />
+    <Property Name="EJE" Type="nvarchar" MaxLength="150" />
+    <Property Name="CLV_PROG_ALIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROG_ALIN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CLV_OBJ_ALIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="OBJ_ALIN" Type="nvarchar" MaxLength="500" />
+    <Property Name="CLV_EST_ALIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="EST_ALIN" Type="nvarchar" MaxLength="500" />
+    <Property Name="CLV_LIN_ACC" Type="nvarchar" MaxLength="40" />
+    <Property Name="LIN_ACC" Type="nvarchar" MaxLength="400" />
+    <Property Name="CLV_IND_ALIN" Type="nvarchar" MaxLength="40" />
+    <Property Name="IND_ALIN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CLV_META_ALIN" Type="nvarchar" MaxLength="40" />
+    <Property Name="META_ALIN" Type="nvarchar" MaxLength="400" />
+    <Property Name="CLV_FIN" Type="nvarchar" MaxLength="50" />
+    <Property Name="FINAL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CLV_FUN" Type="nvarchar" MaxLength="20" />
+    <Property Name="FUNCION" Type="nvarchar" MaxLength="400" />
+    <Property Name="CLV_SUBFUN" Type="nvarchar" MaxLength="10" />
+    <Property Name="SUBFUNCION" Type="nvarchar" MaxLength="150" />
+    <Property Name="CLV_ACTINST" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACTIVIDAD_INST" Type="nvarchar" MaxLength="500" />
+    <Property Name="MODEJECUC" Type="nvarchar" MaxLength="50" />
+    <Property Name="MODAINVE" Type="nvarchar" MaxLength="50" />
+    <Property Name="INICIAL" Type="money" />
+    <Property Name="AMPLIADO" Type="money" />
+    <Property Name="REDUCIDO" Type="money" />
+    <Property Name="PRESUPUESTO" Type="money" />
+    <Property Name="COMPROMETIDO" Type="money" />
+    <Property Name="DEVENGADO" Type="money" />
+    <Property Name="EJERCIDO" Type="money" />
+    <Property Name="PAGADO" Type="money" />
+    <Property Name="ESTADO" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DETALLEMOMENTOS">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+      <PropertyRef Name="MOMENTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="ENERO" Type="float" />
+    <Property Name="FEBRERO" Type="float" />
+    <Property Name="MARZO" Type="float" />
+    <Property Name="ABRIL" Type="float" />
+    <Property Name="MAYO" Type="float" />
+    <Property Name="JUNIO" Type="float" />
+    <Property Name="JULIO" Type="float" />
+    <Property Name="AGOSTO" Type="float" />
+    <Property Name="SEPTIEMBRE" Type="float" />
+    <Property Name="OCTUBRE" Type="float" />
+    <Property Name="NOVIEMBRE" Type="float" />
+    <Property Name="DICIEMBRE" Type="float" />
+    <Property Name="MOMENTO" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="id_proyecto" />
+    </Key>
+    <Property Name="id_proyecto" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="1000" />
+    <Property Name="id_dependencia" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.SPARTIDAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="SPARTIDAS">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="ENEMOD" Type="float" />
+    <Property Name="FEBMOD" Type="float" />
+    <Property Name="MARMOD" Type="float" />
+    <Property Name="ABRMOD" Type="float" />
+    <Property Name="MAYMOD" Type="float" />
+    <Property Name="JUNMOD" Type="float" />
+    <Property Name="JULMOD" Type="float" />
+    <Property Name="AGOMOD" Type="float" />
+    <Property Name="SEPMOD" Type="float" />
+    <Property Name="OCTMOD" Type="float" />
+    <Property Name="NOVMOD" Type="float" />
+    <Property Name="DICMOD" Type="float" />
+    <Property Name="ENECOMP" Type="float" />
+    <Property Name="FEBCOMP" Type="float" />
+    <Property Name="MARCOMP" Type="float" />
+    <Property Name="ABRCOMP" Type="float" />
+    <Property Name="MAYCOMP" Type="float" />
+    <Property Name="JUNCOMP" Type="float" />
+    <Property Name="JULCOMP" Type="float" />
+    <Property Name="AGOCOMP" Type="float" />
+    <Property Name="SEPCOMP" Type="float" />
+    <Property Name="OCTCOMP" Type="float" />
+    <Property Name="NOVCOMP" Type="float" />
+    <Property Name="DICCOMP" Type="float" />
+    <Property Name="ENEDEV" Type="float" />
+    <Property Name="FEBDEV" Type="float" />
+    <Property Name="MARDEV" Type="float" />
+    <Property Name="ABRDEV" Type="float" />
+    <Property Name="MAYDEV" Type="float" />
+    <Property Name="JUNDEV" Type="float" />
+    <Property Name="JULDEV" Type="float" />
+    <Property Name="AGODEV" Type="float" />
+    <Property Name="SEPDEV" Type="float" />
+    <Property Name="OCTDEV" Type="float" />
+    <Property Name="NOVDEV" Type="float" />
+    <Property Name="DICDEV" Type="float" />
+    <Property Name="ENEEJE" Type="float" />
+    <Property Name="FEBEJE" Type="float" />
+    <Property Name="MAREJE" Type="float" />
+    <Property Name="ABREJE" Type="float" />
+    <Property Name="MAYEJE" Type="float" />
+    <Property Name="JUNEJE" Type="float" />
+    <Property Name="JULEJE" Type="float" />
+    <Property Name="AGOEJE" Type="float" />
+    <Property Name="SEPEJE" Type="float" />
+    <Property Name="OCTEJE" Type="float" />
+    <Property Name="NOVEJE" Type="float" />
+    <Property Name="DICEJE" Type="float" />
+    <Property Name="PROYECTO" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PARTIDA" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
+    <Property Name="CLV_FUENTE" Type="int" />
+    <Property Name="CLV_RECURSO" Type="int" />
+    <Property Name="CLV_CAPITULO" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="VtPresupuesto">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+      <PropertyRef Name="MOMENTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="ENERO" Type="float" />
+    <Property Name="FEBRERO" Type="float" />
+    <Property Name="MARZO" Type="float" />
+    <Property Name="ABRIL" Type="float" />
+    <Property Name="MAYO" Type="float" />
+    <Property Name="JUNIO" Type="float" />
+    <Property Name="JULIO" Type="float" />
+    <Property Name="AGOSTO" Type="float" />
+    <Property Name="SEPTIEMBRE" Type="float" />
+    <Property Name="OCTUBRE" Type="float" />
+    <Property Name="NOVIEMBRE" Type="float" />
+    <Property Name="DICIEMBRE" Type="float" />
+    <Property Name="MOMENTO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PROYECTO" Type="nvarchar" MaxLength="1000" />
+    <Property Name="PARTIDA" Type="nvarchar" MaxLength="300" />
+    <Property Name="CAPITULO" Type="nvarchar" MaxLength="100" />
+    <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
+    <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_CAPITULO" Type="int" />
+    <Property Name="CLV_RECURSO" Type="int" />
+    <Property Name="RECURSO" Type="nvarchar" MaxLength="300" />
+    <Property Name="TIPO_GASTO" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_FUENTE" Type="int" />
+    <Property Name="FUENTE" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="SIENCHAFAModelStoreContainer">
+    <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SPARTIDAS" EntityType="Self.SPARTIDAS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SPARTIDAS].[ID_PROYECTO] AS [ID_PROYECTO], 
+    [SPARTIDAS].[CLV_PARTID] AS [CLV_PARTID], 
+    [SPARTIDAS].[ENEMOD] AS [ENEMOD], 
+    [SPARTIDAS].[FEBMOD] AS [FEBMOD], 
+    [SPARTIDAS].[MARMOD] AS [MARMOD], 
+    [SPARTIDAS].[ABRMOD] AS [ABRMOD], 
+    [SPARTIDAS].[MAYMOD] AS [MAYMOD], 
+    [SPARTIDAS].[JUNMOD] AS [JUNMOD], 
+    [SPARTIDAS].[JULMOD] AS [JULMOD], 
+    [SPARTIDAS].[AGOMOD] AS [AGOMOD], 
+    [SPARTIDAS].[SEPMOD] AS [SEPMOD], 
+    [SPARTIDAS].[OCTMOD] AS [OCTMOD], 
+    [SPARTIDAS].[NOVMOD] AS [NOVMOD], 
+    [SPARTIDAS].[DICMOD] AS [DICMOD], 
+    [SPARTIDAS].[ENECOMP] AS [ENECOMP], 
+    [SPARTIDAS].[FEBCOMP] AS [FEBCOMP], 
+    [SPARTIDAS].[MARCOMP] AS [MARCOMP], 
+    [SPARTIDAS].[ABRCOMP] AS [ABRCOMP], 
+    [SPARTIDAS].[MAYCOMP] AS [MAYCOMP], 
+    [SPARTIDAS].[JUNCOMP] AS [JUNCOMP], 
+    [SPARTIDAS].[JULCOMP] AS [JULCOMP], 
+    [SPARTIDAS].[AGOCOMP] AS [AGOCOMP], 
+    [SPARTIDAS].[SEPCOMP] AS [SEPCOMP], 
+    [SPARTIDAS].[OCTCOMP] AS [OCTCOMP], 
+    [SPARTIDAS].[NOVCOMP] AS [NOVCOMP], 
+    [SPARTIDAS].[DICCOMP] AS [DICCOMP], 
+    [SPARTIDAS].[ENEDEV] AS [ENEDEV], 
+    [SPARTIDAS].[FEBDEV] AS [FEBDEV], 
+    [SPARTIDAS].[MARDEV] AS [MARDEV], 
+    [SPARTIDAS].[ABRDEV] AS [ABRDEV], 
+    [SPARTIDAS].[MAYDEV] AS [MAYDEV], 
+    [SPARTIDAS].[JUNDEV] AS [JUNDEV], 
+    [SPARTIDAS].[JULDEV] AS [JULDEV], 
+    [SPARTIDAS].[AGODEV] AS [AGODEV], 
+    [SPARTIDAS].[SEPDEV] AS [SEPDEV], 
+    [SPARTIDAS].[OCTDEV] AS [OCTDEV], 
+    [SPARTIDAS].[NOVDEV] AS [NOVDEV], 
+    [SPARTIDAS].[DICDEV] AS [DICDEV], 
+    [SPARTIDAS].[ENEEJE] AS [ENEEJE], 
+    [SPARTIDAS].[FEBEJE] AS [FEBEJE], 
+    [SPARTIDAS].[MAREJE] AS [MAREJE], 
+    [SPARTIDAS].[ABREJE] AS [ABREJE], 
+    [SPARTIDAS].[MAYEJE] AS [MAYEJE], 
+    [SPARTIDAS].[JUNEJE] AS [JUNEJE], 
+    [SPARTIDAS].[JULEJE] AS [JULEJE], 
+    [SPARTIDAS].[AGOEJE] AS [AGOEJE], 
+    [SPARTIDAS].[SEPEJE] AS [SEPEJE], 
+    [SPARTIDAS].[OCTEJE] AS [OCTEJE], 
+    [SPARTIDAS].[NOVEJE] AS [NOVEJE], 
+    [SPARTIDAS].[DICEJE] AS [DICEJE], 
+    [SPARTIDAS].[PROYECTO] AS [PROYECTO], 
+    [SPARTIDAS].[PARTIDA] AS [PARTIDA], 
+    [SPARTIDAS].[CLV_UNIDADM] AS [CLV_UNIDADM], 
+    [SPARTIDAS].[CLV_FUENTE] AS [CLV_FUENTE], 
+    [SPARTIDAS].[CLV_RECURSO] AS [CLV_RECURSO], 
+    [SPARTIDAS].[CLV_CAPITULO] AS [CLV_CAPITULO]
+    FROM [dbo].[SPARTIDAS] AS [SPARTIDAS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VtPresupuesto" EntityType="Self.VtPresupuesto" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VtPresupuesto].[ID_PROYECTO] AS [ID_PROYECTO], 
+    [VtPresupuesto].[CLV_PARTID] AS [CLV_PARTID], 
+    [VtPresupuesto].[ENERO] AS [ENERO], 
+    [VtPresupuesto].[FEBRERO] AS [FEBRERO], 
+    [VtPresupuesto].[MARZO] AS [MARZO], 
+    [VtPresupuesto].[ABRIL] AS [ABRIL], 
+    [VtPresupuesto].[MAYO] AS [MAYO], 
+    [VtPresupuesto].[JUNIO] AS [JUNIO], 
+    [VtPresupuesto].[JULIO] AS [JULIO], 
+    [VtPresupuesto].[AGOSTO] AS [AGOSTO], 
+    [VtPresupuesto].[SEPTIEMBRE] AS [SEPTIEMBRE], 
+    [VtPresupuesto].[OCTUBRE] AS [OCTUBRE], 
+    [VtPresupuesto].[NOVIEMBRE] AS [NOVIEMBRE], 
+    [VtPresupuesto].[DICIEMBRE] AS [DICIEMBRE], 
+    [VtPresupuesto].[MOMENTO] AS [MOMENTO], 
+    [VtPresupuesto].[PROYECTO] AS [PROYECTO], 
+    [VtPresupuesto].[PARTIDA] AS [PARTIDA], 
+    [VtPresupuesto].[CAPITULO] AS [CAPITULO], 
+    [VtPresupuesto].[CLV_UNIDADM] AS [CLV_UNIDADM], 
+    [VtPresupuesto].[UNIDADM] AS [UNIDADM], 
+    [VtPresupuesto].[CLV_CAPITULO] AS [CLV_CAPITULO], 
+    [VtPresupuesto].[CLV_RECURSO] AS [CLV_RECURSO], 
+    [VtPresupuesto].[RECURSO] AS [RECURSO], 
+    [VtPresupuesto].[TIPO_GASTO] AS [TIPO_GASTO], 
+    [VtPresupuesto].[CLV_FUENTE] AS [CLV_FUENTE], 
+    [VtPresupuesto].[FUENTE] AS [FUENTE]
+    FROM [dbo].[VtPresupuesto] AS [VtPresupuesto]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

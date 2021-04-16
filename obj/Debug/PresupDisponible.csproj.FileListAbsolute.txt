@@ -1,0 +1,134 @@
+C:\Users\abraham\source\repos\PresupDisponible\bin\PresupDisponible.dll.config
+C:\Users\abraham\source\repos\PresupDisponible\bin\PresupDisponible.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\PresupDisponible.pdb
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\csc.exe
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\csc.exe.config
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\csc.rsp
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\csi.exe
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\csi.rsp
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.AppContext.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\vbc.exe
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\vbc.exe.config
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\vbc.rsp
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\VBCSCompiler.exe
+C:\Users\abraham\source\repos\PresupDisponible\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\abraham\source\repos\PresupDisponible\bin\Antlr3.Runtime.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\EntityFramework.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\EntityFramework.SqlServer.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\Newtonsoft.Json.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Helpers.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Mvc.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Optimization.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Razor.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.Deployment.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.Razor.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\WebGrease.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\EntityFramework.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\EntityFramework.SqlServer.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Helpers.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Mvc.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Optimization.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.Razor.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.Deployment.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\System.Web.WebPages.Razor.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\Newtonsoft.Json.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\Antlr3.Runtime.pdb
+C:\Users\abraham\source\repos\PresupDisponible\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.Helpers.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.Mvc.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.Optimization.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.Razor.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.WebPages.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\abraham\source\repos\PresupDisponible\obj\Debug\PresupDisponible.csproj.CopyComplete
+C:\Users\abraham\source\repos\PresupDisponible\obj\Debug\PresupDisponible.dll
+C:\Users\abraham\source\repos\PresupDisponible\obj\Debug\PresupDisponible.pdb
+C:\Users\abraham\source\repos\PresupDisponible\obj\Debug\PresupDisponible.csprojAssemblyReference.cache
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\PresupDisponible.dll.config
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\PresupDisponible.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\PresupDisponible.pdb
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\csc.exe
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\csc.exe.config
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\csc.rsp
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\csi.exe
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\csi.rsp
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.AppContext.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.Collections.Immutable.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.IO.FileSystem.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\System.Reflection.Metadata.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\vbc.exe
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\vbc.exe.config
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\vbc.rsp
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\VBCSCompiler.exe
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\roslyn\VBCSCompiler.exe.config
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Antlr3.Runtime.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\EntityFramework.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\EntityFramework.SqlServer.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Microsoft.Web.Infrastructure.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Newtonsoft.Json.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Helpers.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Mvc.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Optimization.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Razor.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.Deployment.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.Razor.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\WebGrease.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\EntityFramework.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\EntityFramework.SqlServer.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Helpers.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Mvc.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Optimization.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.Razor.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.Deployment.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\System.Web.WebPages.Razor.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Newtonsoft.Json.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Antlr3.Runtime.pdb
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.Helpers.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.Mvc.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.Optimization.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.Razor.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.WebPages.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\obj\Debug\PresupDisponible.csprojAssemblyReference.cache
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\obj\Debug\PresupDisponible.csproj.CoreCompileInputs.cache
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\obj\Debug\PresupDisponible.csproj.CopyComplete
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\obj\Debug\PresupDisponible.dll
+C:\ISRAEL\Otros Archivos\PERSONAL\PresupDisponible\obj\Debug\PresupDisponible.pdb
