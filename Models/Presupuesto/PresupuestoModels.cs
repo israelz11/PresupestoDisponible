@@ -14,7 +14,6 @@ namespace PresupDisponible.Models.Presupuesto
     
     public class PresupuestoModels
     {
-
         private SIENCHAFAEntities dbcontex = new SIENCHAFAEntities();
 
         public string uploadfiles(HttpPostedFileBase fileInput1, HttpPostedFileBase fileInput2, HttpServerUtilityBase server)
@@ -531,7 +530,6 @@ namespace PresupDisponible.Models.Presupuesto
             }
             catch (Exception e)
             {
-
                 throw (e);
             }
            

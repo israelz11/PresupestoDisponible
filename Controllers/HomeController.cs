@@ -18,16 +18,25 @@ namespace PresupDisponible.Controllers
         }
 
         #region METODOS PARA CARGAR ARCHIVOS
-        public ActionResult CargarArchivos(HttpPostedFileBase FileInput1, HttpPostedFileBase FileInput2)
+        public ActionResult CargarArchivos(/*HttpPostedFileBase FileInput1, HttpPostedFileBase FileInput2*/)
         {
-            
+
             try
             {
-               return Json(presupuestoModels.uploadfiles(FileInput1, FileInput2, Server), JsonRequestBehavior.AllowGet);
+                if (Request != null)
+                {
+                    HttpPostedFileBase FileInput1 = Request.Files["FileInput1"];
+                    HttpPostedFileBase FileInput2 = Request.Files["FileInput2"];
+
+                    return Json(presupuestoModels.uploadfiles(FileInput1, FileInput2, Server), JsonRequestBehavior.AllowGet);
+                }
+                else
+                    return null;
             }
-            catch (Exception ex)
+            catch (ArgumentException e)
             {
-               throw(ex);
+                Response.StatusCode = 400;
+                return new ContentResult { Content = e.Message };
             }
         }
         #endregion
@@ -44,7 +53,6 @@ namespace PresupDisponible.Controllers
             }
         }
 
-        [HttpPost]
         public ActionResult SearchMensual(string Periodos, string Unidades, string Proyectos, string Partidas, string Fuentes, string Recursos, string Capitulos)
         {
             try
@@ -57,7 +65,6 @@ namespace PresupDisponible.Controllers
             }
         }
 
-        [HttpPost]
         public ActionResult SearchAnual(string Periodos, string Unidades, string Proyectos, string Partidas, string Fuentes, string Recursos, string Capitulos)
         {
             try

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SIENCHAFAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SIENCHAFAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Proyectos" EntityType="SIENCHAFAModel.Proyectos" />
+    <EntitySet Name="Atuevaluacion_demo" EntityType="SIENCHAFAModel.Atuevaluacion_demo" />
+    <EntitySet Name="DETALLEMOMENTOS" EntityType="SIENCHAFAModel.DETALLEMOMENTOS" />
+    <EntitySet Name="VtPresupuesto" EntityType="SIENCHAFAModel.VtPresupuesto" />
+    <EntitySet Name="SPARTIDAS" EntityType="SIENCHAFAModel.SPARTIDAS" />
+  </EntityContainer>
+  <EntityType Name="Proyectos">
+    <Key>
+      <PropertyRef Name="id_proyecto" />
+    </Key>
+    <Property Name="id_proyecto" Type="Int32" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="id_dependencia" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Atuevaluacion_demo">
+    <Key>
+      <PropertyRef Name="CLV_PARTIDA" />
+      <PropertyRef Name="ID_PROYECTO" />
+    </Key>
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_GASTO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_CAPITULO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CAPITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTIDA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIDA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_LOCALIDAD" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LOCALIDAD" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_FUENTE" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="FUENTE" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ABR_FUENTE" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_RECURSO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ID_PROYECTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PROYECTO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_INICIO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_TERMINO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="N_PROGRAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROGRAMA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PROG_PRESUP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_EJE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EJE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PROG_ALIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROG_ALIN" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_OBJ_ALIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OBJ_ALIN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_EST_ALIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EST_ALIN" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_LIN_ACC" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="LIN_ACC" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_IND_ALIN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="IND_ALIN" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_META_ALIN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="META_ALIN" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_FIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FINAL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_FUN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FUNCION" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_SUBFUN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SUBFUNCION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_ACTINST" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACTIVIDAD_INST" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MODEJECUC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MODAINVE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="INICIAL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AMPLIADO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="REDUCIDO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PRESUPUESTO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="COMPROMETIDO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DEVENGADO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="EJERCIDO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PAGADO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ESTADO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DETALLEMOMENTOS">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+      <PropertyRef Name="MOMENTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="ENERO" Type="Double" />
+    <Property Name="FEBRERO" Type="Double" />
+    <Property Name="MARZO" Type="Double" />
+    <Property Name="ABRIL" Type="Double" />
+    <Property Name="MAYO" Type="Double" />
+    <Property Name="JUNIO" Type="Double" />
+    <Property Name="JULIO" Type="Double" />
+    <Property Name="AGOSTO" Type="Double" />
+    <Property Name="SEPTIEMBRE" Type="Double" />
+    <Property Name="OCTUBRE" Type="Double" />
+    <Property Name="NOVIEMBRE" Type="Double" />
+    <Property Name="DICIEMBRE" Type="Double" />
+    <Property Name="MOMENTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VtPresupuesto">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+      <PropertyRef Name="MOMENTO" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="ENERO" Type="Double" />
+    <Property Name="FEBRERO" Type="Double" />
+    <Property Name="MARZO" Type="Double" />
+    <Property Name="ABRIL" Type="Double" />
+    <Property Name="MAYO" Type="Double" />
+    <Property Name="JUNIO" Type="Double" />
+    <Property Name="JULIO" Type="Double" />
+    <Property Name="AGOSTO" Type="Double" />
+    <Property Name="SEPTIEMBRE" Type="Double" />
+    <Property Name="OCTUBRE" Type="Double" />
+    <Property Name="NOVIEMBRE" Type="Double" />
+    <Property Name="DICIEMBRE" Type="Double" />
+    <Property Name="MOMENTO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROYECTO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIDA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CAPITULO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_CAPITULO" Type="Int32" />
+    <Property Name="CLV_RECURSO" Type="Int32" />
+    <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_GASTO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_FUENTE" Type="Int32" />
+    <Property Name="FUENTE" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SPARTIDAS">
+    <Key>
+      <PropertyRef Name="ID_PROYECTO" />
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="ID_PROYECTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="ENEMOD" Type="Double" />
+    <Property Name="FEBMOD" Type="Double" />
+    <Property Name="MARMOD" Type="Double" />
+    <Property Name="ABRMOD" Type="Double" />
+    <Property Name="MAYMOD" Type="Double" />
+    <Property Name="JUNMOD" Type="Double" />
+    <Property Name="JULMOD" Type="Double" />
+    <Property Name="AGOMOD" Type="Double" />
+    <Property Name="SEPMOD" Type="Double" />
+    <Property Name="OCTMOD" Type="Double" />
+    <Property Name="NOVMOD" Type="Double" />
+    <Property Name="DICMOD" Type="Double" />
+    <Property Name="ENECOMP" Type="Double" />
+    <Property Name="FEBCOMP" Type="Double" />
+    <Property Name="MARCOMP" Type="Double" />
+    <Property Name="ABRCOMP" Type="Double" />
+    <Property Name="MAYCOMP" Type="Double" />
+    <Property Name="JUNCOMP" Type="Double" />
+    <Property Name="JULCOMP" Type="Double" />
+    <Property Name="AGOCOMP" Type="Double" />
+    <Property Name="SEPCOMP" Type="Double" />
+    <Property Name="OCTCOMP" Type="Double" />
+    <Property Name="NOVCOMP" Type="Double" />
+    <Property Name="DICCOMP" Type="Double" />
+    <Property Name="ENEDEV" Type="Double" />
+    <Property Name="FEBDEV" Type="Double" />
+    <Property Name="MARDEV" Type="Double" />
+    <Property Name="ABRDEV" Type="Double" />
+    <Property Name="MAYDEV" Type="Double" />
+    <Property Name="JUNDEV" Type="Double" />
+    <Property Name="JULDEV" Type="Double" />
+    <Property Name="AGODEV" Type="Double" />
+    <Property Name="SEPDEV" Type="Double" />
+    <Property Name="OCTDEV" Type="Double" />
+    <Property Name="NOVDEV" Type="Double" />
+    <Property Name="DICDEV" Type="Double" />
+    <Property Name="ENEEJE" Type="Double" />
+    <Property Name="FEBEJE" Type="Double" />
+    <Property Name="MAREJE" Type="Double" />
+    <Property Name="ABREJE" Type="Double" />
+    <Property Name="MAYEJE" Type="Double" />
+    <Property Name="JUNEJE" Type="Double" />
+    <Property Name="JULEJE" Type="Double" />
+    <Property Name="AGOEJE" Type="Double" />
+    <Property Name="SEPEJE" Type="Double" />
+    <Property Name="OCTEJE" Type="Double" />
+    <Property Name="NOVEJE" Type="Double" />
+    <Property Name="DICEJE" Type="Double" />
+    <Property Name="PROYECTO" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIDA" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CLV_FUENTE" Type="Int32" />
+    <Property Name="CLV_RECURSO" Type="Int32" />
+    <Property Name="CLV_CAPITULO" Type="Int32" />
+  </EntityType>
+</Schema>
