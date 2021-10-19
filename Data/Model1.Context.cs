@@ -12,6 +12,8 @@ namespace PresupDisponible.Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class SIENCHAFAEntities : DbContext
     {
@@ -30,5 +32,13 @@ namespace PresupDisponible.Data
         public virtual DbSet<DETALLEMOMENTOS> DETALLEMOMENTOS { get; set; }
         public virtual DbSet<VtPresupuesto> VtPresupuesto { get; set; }
         public virtual DbSet<SPARTIDAS> SPARTIDAS { get; set; }
+        public virtual DbSet<PRESUPUESTOS_ANALITICO> PRESUPUESTOS_ANALITICO { get; set; }
+        public virtual DbSet<PRESUPUESTOS_ANALITICO_1000> PRESUPUESTOS_ANALITICO_1000 { get; set; }
+        public virtual DbSet<PRESUPUESTO_ANALITICOXUNIDAD> PRESUPUESTO_ANALITICOXUNIDAD { get; set; }
+    
+        public virtual int UpdateAnalytic()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateAnalytic");
+        }
     }
 }

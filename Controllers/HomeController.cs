@@ -1,4 +1,6 @@
-﻿using PresupDisponible.Models.Presupuesto;
+﻿using PresupDisponible.Data;
+using PresupDisponible.Models.Presupuesto;
+using PresupDisponible.Models.Report;
 using PresupDisponible.Models.Views;
 using System;
 using System.Collections.Generic;
@@ -8,17 +10,31 @@ using System.Web.Mvc;
 
 namespace PresupDisponible.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        #region Properties
+
         private PresupuestoModels presupuestoModels= new PresupuestoModels();
+        private AnalyticModel analyticModel = new AnalyticModel();
+
+        #endregion
+
         public ActionResult Index()
         {
             IndexView indexView = new IndexView();
             return View(indexView);
         }
 
+        public ActionResult AnalyticView()
+        {
+            AnalyticView analyticView = new AnalyticView();
+            Session["Presupuesto"] = analyticView.Presupuesto;
+            return View(analyticView);
+        }
+
         #region METODOS PARA CARGAR ARCHIVOS
-        public ActionResult CargarArchivos(/*HttpPostedFileBase FileInput1, HttpPostedFileBase FileInput2*/)
+
+        public async System.Threading.Tasks.Task<ActionResult> CargarArchivos(/*HttpPostedFileBase FileInput1, HttpPostedFileBase FileInput2*/)
         {
 
             try
@@ -27,16 +43,15 @@ namespace PresupDisponible.Controllers
                 {
                     HttpPostedFileBase FileInput1 = Request.Files["FileInput1"];
                     HttpPostedFileBase FileInput2 = Request.Files["FileInput2"];
-
-                    return Json(presupuestoModels.uploadfiles(FileInput1, FileInput2, Server), JsonRequestBehavior.AllowGet);
+                    await presupuestoModels.uploadfiles(FileInput1, FileInput2, Server);
+                    return Json("ok", JsonRequestBehavior.AllowGet);
                 }
                 else
                     return null;
             }
-            catch (ArgumentException e)
+            catch (ArgumentException ex)
             {
-                Response.StatusCode = 400;
-                return new ContentResult { Content = e.Message };
+                return ThrowJSONError(ex);
             }
         }
         #endregion
@@ -77,5 +92,34 @@ namespace PresupDisponible.Controllers
             }
         }
 
+        public ActionResult SearchPresupuestoAnaliticoXUnidad(string Periodos, string Unidades, string Proyectos, string Partidas, string Fuentes, string Recursos, string Capitulos)
+        {
+            try
+            {
+                List<PRESUPUESTO_ANALITICOXUNIDAD> Presupuesto = presupuestoModels.SearchPresupuestoAnaliticoXUnidad(Periodos.Split(',').Select(int.Parse).ToList(), Unidades.Split(',').ToList(), Proyectos.Split(',').ToList(), Partidas.Split(',').Select(int.Parse).ToList(), Fuentes.Split(',').Select(int.Parse).ToList(), Recursos.Split(',').ToList(), Capitulos.Split(',').ToList());
+                Session["Presupuesto"] = Presupuesto;
+                return Json(Presupuesto, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public ActionResult GetPDFAnalyticFormat(string Partida)
+        {
+            try
+            {
+                Response.Buffer = false;
+                Response.ClearContent();
+                Response.ClearHeaders();
+
+                return File(analyticModel.GetPDFFormat(Session["Presupuesto"] as List<PRESUPUESTO_ANALITICOXUNIDAD>, Partida), "application/pdf", "AnalyticFormat.pdf");
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }

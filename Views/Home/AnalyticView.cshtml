@@ -1,0 +1,326 @@
+﻿@model PresupDisponible.Models.Views.AnalyticView
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        var UrlRelative = '@Url.Content("~/")';
+    </script>
+    <!-- Page title -->
+    <title>Presupuesto Analítico 2021</title>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/animate.css/animate.css" />
+    <!--<link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap-sweetalert-master/dist/sweetalert.css?val=@DateTime.Now.Ticks.ToString()" />-->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/sweetalert2-10.12.7/dist/sweetalert2.css?val=@DateTime.Now.Ticks.ToString()" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap/dist/css/bootstrap.css?val=@DateTime.Now.Ticks.ToString()" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/toastr/build/toastr.min.css?val=@DateTime.Now.Ticks.ToString()" />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/fonts/pe-icon-7-stroke/css/helper.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap-select-master/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/")Content/styles/style.css?val=@DateTime.Now.Ticks.ToString()">
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/datatables_plugins/integration/bootstrap/3/dataTables.bootstrap.css" />
+
+    <script src="@Url.Content("~/")Content/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/sweetalert2-10.12.7/dist/sweetalert2.min.js"></script>
+    <script src="@Url.Content("~/")Content/scripts/jquery.form.js"></script>
+
+    <script src="@Url.Content("~/")Content/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/bootstrap-select-master/js/bootstrap-select.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables_plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables_plugins/api/sum().js"></script>
+    <script src="@Url.Content("~/")Content/vendor/iCheck/icheck.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/sparkline/index.js"></script>
+    <script src="@Url.Content("~/")Content/scripts/homer.js"></script>
+    <script src="@Url.Content("~/")Scripts/Home/AnalyticView.js?val=@DateTime.Now.Ticks.ToString()"></script>
+
+    <style>
+        .lineControl {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0px;
+            border-bottom: 1px solid #ccc;
+            font-size: large;
+        }
+    </style>
+</head>
+<body class="blank">
+
+    <div id="header">
+        <div class="color-line">
+        </div>
+        <div id="logo" class="light-version" style="padding:0px !important;">
+            <img style="height: 50px;" src="http://172.16.3.71/Correspondencia/Content/images/logotipo_horizontal_rgb.png">
+        </div>
+        <nav role="navigation">
+            <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+            <div class="small-logo">
+                <span class="text-primary">HOMER APP</span>
+            </div>
+           
+            <div class="form-group"> 
+                <h3 style="margin-top: 0px; padding-top: 15px;">
+                    Presupuesto Analitico 2021
+                </h3>
+            </div>
+            
+        </nav>
+    </div>
+
+    <div class="boxed-wrapper">
+        <div id="wrapper">
+
+            <div class="col-md-12" style="padding-left: 40px;padding-right: 40px;">
+                <!--Opciones de Reportes-->
+                <div class="row" style="padding-left: 15px; padding-top: 15px;">
+                    <div class="btn-group">
+                        <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Reportes en demanda <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Content("~/")Home/AnalyticView">Presupuesto Analítico</a></li>
+                            <li class="divider"></li>
+                            <li><a href="@Url.Content("~/")Home/Index">Presupuesto Anual/Mensual</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Mostrar Filtros-->
+                <div id="DivList" class="row" style="display:initial">
+
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <h2>Filtros</h2>
+
+                            <div class="hidden-xs" style="position: absolute; right: 25px; top: 20px;">
+                                <button id="cmdExportPDF" class="btn w-xs btn-default" type="button"> <span class="bold"> Exportar a PDF</span></button>
+                            </div>
+
+                            <!--Etiquetas de filtros-->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>PERIODOS</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>UNIADES</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>PARTIDAS</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>PROGRAMA</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!--FILTRO: PERIODOS-->
+                                <div class="col-md-3" style="padding-bottom: 10px;">
+                                    <select class="js-example-basic-single form-control select2-hidden-accessible selectpicker" id="cboPeriodo" multiple title="Periodo..." data-size="7" data-live-search="true" data-header="Periodo" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: UNIDADES-->
+                                <div class="col-md-3">
+                                    <select class="js-example-basic-single form-control select2-hidden-accessible selectpicker" id="cboUnidad" multiple title="Unidad..." data-size="7" data-live-search="true" data-header="Unidad" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.UnidadADM)
+                                            {
+                                                <option value="@row.Key">@row.Description</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: PARTIDAS-->
+                                <div class="col-md-3">
+                                    <select class="form-control selectpicker" id="cboPartida" multiple title="Partida..." data-size="7" data-live-search="true" data-header="Partida">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.Partids)
+                                            {
+                                                <option value="@row.Key">@(row.Key + " - " + row.Description)</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: PROYECTO-->
+                                <div class="col-md-3">
+                                    <select class="form-control selectpicker" id="cboProyecto" multiple title="Programa..." data-size="7" data-live-search="true" data-header="Programa">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.Proyects)
+                                            {
+                                                <option value="@row.Key">@row.Key @row.Description</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <!--Etiquetas de filtros-->
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>FUENTE</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>RECURSOS</label>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label>CAPITULO</label>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <!--FILTRO: FUENTE-->
+                                <div class="col-md-3">
+                                    <select class="js-example-basic-single form-control select2-hidden-accessible selectpicker" id="cboFuente" multiple title="Fuente..." data-size="7" data-live-search="true" data-header="Fuente" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.Fuente)
+                                            {
+                                                <option value="@row.Key">@row.Description</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: RECURSOS-->
+                                <div class="col-md-3">
+                                    <select class="js-example-basic-single form-control select2-hidden-accessible selectpicker" id="cboRecurso" multiple title="Recursos..." data-size="7" data-live-search="true" data-header="Recurso" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.Recurso)
+                                            {
+                                                <option value="@row.Key">@row.Description</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: CAPITULO-->
+                                <div class="col-md-3">
+                                    <select class="js-example-basic-single form-control select2-hidden-accessible selectpicker" id="cboCapitulo" multiple title="Capitulo..." data-size="7" data-live-search="true" data-header="Capitulo" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        <optgroup label="">
+                                            <option value="0" selected>[TODAS LAS OPCIONES]</option>
+                                        </optgroup>
+                                        <optgroup label="">
+                                            @foreach (PresupDisponible.Models.Custom.CustomData row in Model.Capitulos)
+                                            {
+                                                <option value="@row.Key">@row.Description</option>
+                                            }
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <!--FILTRO: BUSCAR-->
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button id="cmdFound" class="btn btn-info" type="button" style="width:100%;"><i class="fa fa-search"></i> Buscar&nbsp;</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+
+
+                        </div>
+                    </div>
+
+                    <!--Tabla de datos-->
+                    <div class="row">
+                        <div style="font-weight: 100">
+                            <table id="AnalyticTable" class="table table-striped table-bordered table-hover dataTable no-footer" style="width:100%;cursor:pointer;">
+                                <thead>
+                                    <tr>
+                                        <th>Dependencia</th>
+                                        <th>Proyecto</th>
+                                        <th>Partida</th>
+                                        <th>Modificado</th>
+                                        <th>Oct/Disp.</th>
+                                        <th>Nov/Disp.</th>
+                                        <th>Dic/Disp.</th>
+                                        <th>Ene/Ej.</th>
+                                        <th>Feb/Ej.</th>
+                                        <th>Mar/Ej.</th>
+                                        <th>Abr/Ej.</th>
+                                        <th>May/Ej.</th>
+                                        <th>Jun/Ej.</th>
+                                        <th>Jul/Ej.</th>
+                                        <th>Ago/Ej.</th>
+                                        <th>Sep/Ej.</th>
+                                        <th>Oct/Ej.</th>
+                                        <th>Nov/Ej.</th>
+                                        <th>Dic/Ej.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (PresupDisponible.Data.PRESUPUESTO_ANALITICOXUNIDAD row in Model.Presupuesto)
+                                    {
+
+                                    <tr>
+                                        <td>@row.UNIDADM.ToUpper()</td>
+                                        <td>@( "(" + row.N_PROGRAMA+ ") " + row.PROG_PRESUP)</td>
+                                        <td>@("(" + row.CLV_PARTID + ") " + row.PARTIDA)</td>
+                                        <td>@String.Format("{0:C0}", row.MODIFICADO)</td>
+                                        <td>@String.Format("{0:C0}", row.OCTUBRE_DIS)</td>
+                                        <td>@String.Format("{0:C0}", row.NOVIEMBRE_DIS)</td>
+                                        <td>@String.Format("{0:C0}", row.DICIEMBRE_DIS)</td>
+                                        <td>@String.Format("{0:C0}", row.ENERO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.FEBRERO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.MARZO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.ABRIL_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.MAYO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.JUNIO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.JULIO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.AGOSTO_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.SEPTIEMBRE_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.OCTUBRE_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.NOVIEMBRE_EJE)</td>
+                                        <td>@String.Format("{0:C0}", row.DICIEMBRE_EJE)</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

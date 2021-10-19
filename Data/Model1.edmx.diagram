@@ -5,11 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f1a9372168d94cda965a0d99659f4b88" Name="Diagram1" >
-        <EntityTypeShape EntityType="SIENCHAFAModel.Proyectos" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="SIENCHAFAModel.Atuevaluacion_demo" Width="1.5" PointX="7.25" PointY="0.625" />
-        <EntityTypeShape EntityType="SIENCHAFAModel.DETALLEMOMENTOS" Width="1.5" PointX="3.375" PointY="0.75" />
-        <EntityTypeShape EntityType="SIENCHAFAModel.VtPresupuesto" Width="1.5" PointX="3.375" PointY="5.75" />
-        <EntityTypeShape EntityType="SIENCHAFAModel.SPARTIDAS" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.Proyectos" Width="1.5" PointX="0.875" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.Atuevaluacion_demo" Width="1.5" PointX="0.875" PointY="2.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.DETALLEMOMENTOS" Width="1.5" PointX="0.875" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.VtPresupuesto" Width="1.5" PointX="0.875" PointY="2" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.SPARTIDAS" Width="1.5" PointX="0.875" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" Width="1.5" PointX="3.5" PointY="1" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" Width="1.5" PointX="3.5" PointY="0.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" Width="1.5" PointX="3.5" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

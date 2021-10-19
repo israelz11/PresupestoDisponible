@@ -6,6 +6,10 @@
     <EntitySet Name="DETALLEMOMENTOS" EntityType="SIENCHAFAModel.DETALLEMOMENTOS" />
     <EntitySet Name="VtPresupuesto" EntityType="SIENCHAFAModel.VtPresupuesto" />
     <EntitySet Name="SPARTIDAS" EntityType="SIENCHAFAModel.SPARTIDAS" />
+    <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
+    <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
+    <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
+    <FunctionImport Name="UpdateAnalytic" />
   </EntityContainer>
   <EntityType Name="Proyectos">
     <Key>
@@ -191,5 +195,83 @@
     <Property Name="CLV_FUENTE" Type="Int32" />
     <Property Name="CLV_RECURSO" Type="Int32" />
     <Property Name="CLV_CAPITULO" Type="Int32" />
+  </EntityType>
+  <EntityType Name="PRESUPUESTOS_ANALITICO">
+    <Key>
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFICADO" Type="Double" />
+    <Property Name="ENERO_COM" Type="Double" />
+    <Property Name="FEBRERO_COM" Type="Double" />
+    <Property Name="MARZO_COM" Type="Double" />
+    <Property Name="ABRIL_COM" Type="Double" />
+    <Property Name="MAYO_COM" Type="Double" />
+    <Property Name="JUNIO_COM" Type="Double" />
+    <Property Name="JULIO_COM" Type="Double" />
+    <Property Name="AGOSTO_COM" Type="Double" />
+    <Property Name="SEPTIEMBRE_COM" Type="Double" />
+    <Property Name="OCTUBRE_COM" Type="Double" />
+    <Property Name="NOVIEMBRE_COM" Type="Double" />
+    <Property Name="DICIEMBRE_COM" Type="Double" />
+    <Property Name="OCTUBRE_DIS" Type="Double" />
+    <Property Name="NOVIEMBRE_DIS" Type="Double" />
+    <Property Name="DICIEMBRE_DIS" Type="Double" />
+  </EntityType>
+  <EntityType Name="PRESUPUESTOS_ANALITICO_1000">
+    <Key>
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MODIFICADO" Type="Double" />
+    <Property Name="ENERO_DEV" Type="Double" />
+    <Property Name="FEBRERO_DEV" Type="Double" />
+    <Property Name="MARZO_DEV" Type="Double" />
+    <Property Name="ABRIL_DEV" Type="Double" />
+    <Property Name="MAYO_DEV" Type="Double" />
+    <Property Name="JUNIO_DEV" Type="Double" />
+    <Property Name="JULIO_DEV" Type="Double" />
+    <Property Name="AGOSTO_DEV" Type="Double" />
+    <Property Name="SEPTIEMBRE_DEV" Type="Double" />
+    <Property Name="OCTUBRE_DIS" Type="Double" />
+    <Property Name="NOVIEMBRE_DIS" Type="Double" />
+    <Property Name="DICIEMBRE_DIS" Type="Double" />
+  </EntityType>
+  <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_RECURSO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="N_PROGRAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROG_PRESUP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+    <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MODIFICADO" Type="Double" />
+    <Property Name="COMPROMETIDO" Type="Double" />
+    <Property Name="OCTUBRE_DIS" Type="Double" />
+    <Property Name="NOVIEMBRE_DIS" Type="Double" />
+    <Property Name="DICIEMBRE_DIS" Type="Double" />
+    <Property Name="ENERO_EJE" Type="Double" />
+    <Property Name="FEBRERO_EJE" Type="Double" />
+    <Property Name="MARZO_EJE" Type="Double" />
+    <Property Name="ABRIL_EJE" Type="Double" />
+    <Property Name="MAYO_EJE" Type="Double" />
+    <Property Name="JUNIO_EJE" Type="Double" />
+    <Property Name="JULIO_EJE" Type="Double" />
+    <Property Name="AGOSTO_EJE" Type="Double" />
+    <Property Name="SEPTIEMBRE_EJE" Type="Double" />
+    <Property Name="OCTUBRE_EJE" Type="Double" />
+    <Property Name="NOVIEMBRE_EJE" Type="Double" />
+    <Property Name="DICIEMBRE_EJE" Type="Double" />
   </EntityType>
 </Schema>

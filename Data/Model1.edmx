@@ -95,6 +95,88 @@
           <Property Name="descripcion" Type="nvarchar" MaxLength="1000" />
           <Property Name="id_dependencia" Type="int" />
         </EntityType>
+        <EntityType Name="TPRESUPUESTO_ANALITICOXUNIDAD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLV_UNIDADM" Type="nvarchar" MaxLength="5" />
+          <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+          <Property Name="CLV_RECURSO" Type="nvarchar" MaxLength="10" />
+          <Property Name="RECURSO" Type="nvarchar" MaxLength="300" />
+          <Property Name="CLV_CAPITU" Type="nvarchar" MaxLength="4" Nullable="false" />
+          <Property Name="CAPITULO" Type="nvarchar" MaxLength="60" />
+          <Property Name="N_PROGRAMA" Type="nvarchar" MaxLength="50" />
+          <Property Name="PROG_PRESUP" Type="nvarchar" MaxLength="250" />
+          <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+          <Property Name="PARTIDA" Type="nvarchar" MaxLength="150" />
+          <Property Name="MODIFICADO" Type="float" />
+          <Property Name="COMPROMETIDO" Type="float" />
+          <Property Name="OCTUBRE_DIS" Type="float" />
+          <Property Name="NOVIEMBRE_DIS" Type="float" />
+          <Property Name="DICIEMBRE_DIS" Type="float" />
+          <Property Name="ENERO_EJE" Type="float" />
+          <Property Name="FEBRERO_EJE" Type="float" />
+          <Property Name="MARZO_EJE" Type="float" />
+          <Property Name="ABRIL_EJE" Type="float" />
+          <Property Name="MAYO_EJE" Type="float" />
+          <Property Name="JUNIO_EJE" Type="float" />
+          <Property Name="JULIO_EJE" Type="float" />
+          <Property Name="AGOSTO_EJE" Type="float" />
+          <Property Name="SEPTIEMBRE_EJE" Type="float" />
+          <Property Name="OCTUBRE_EJE" Type="float" />
+          <Property Name="NOVIEMBRE_EJE" Type="float" />
+          <Property Name="DICIEMBRE_EJE" Type="float" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PRESUPUESTOS_ANALITICO">
+          <Key>
+            <PropertyRef Name="CLV_PARTID" />
+          </Key>
+          <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
+          <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+          <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+          <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
+          <Property Name="MODIFICADO" Type="float" />
+          <Property Name="ENERO_COM" Type="float" />
+          <Property Name="FEBRERO_COM" Type="float" />
+          <Property Name="MARZO_COM" Type="float" />
+          <Property Name="ABRIL_COM" Type="float" />
+          <Property Name="MAYO_COM" Type="float" />
+          <Property Name="JUNIO_COM" Type="float" />
+          <Property Name="JULIO_COM" Type="float" />
+          <Property Name="AGOSTO_COM" Type="float" />
+          <Property Name="SEPTIEMBRE_COM" Type="float" />
+          <Property Name="OCTUBRE_COM" Type="float" />
+          <Property Name="NOVIEMBRE_COM" Type="float" />
+          <Property Name="DICIEMBRE_COM" Type="float" />
+          <Property Name="OCTUBRE_DIS" Type="float" />
+          <Property Name="NOVIEMBRE_DIS" Type="float" />
+          <Property Name="DICIEMBRE_DIS" Type="float" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO_1000' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PRESUPUESTOS_ANALITICO_1000">
+          <Key>
+            <PropertyRef Name="CLV_PARTID" />
+          </Key>
+          <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+          <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
+          <Property Name="MODIFICADO" Type="float" />
+          <Property Name="ENERO_DEV" Type="float" />
+          <Property Name="FEBRERO_DEV" Type="float" />
+          <Property Name="MARZO_DEV" Type="float" />
+          <Property Name="ABRIL_DEV" Type="float" />
+          <Property Name="MAYO_DEV" Type="float" />
+          <Property Name="JUNIO_DEV" Type="float" />
+          <Property Name="JULIO_DEV" Type="float" />
+          <Property Name="AGOSTO_DEV" Type="float" />
+          <Property Name="SEPTIEMBRE_DEV" Type="float" />
+          <Property Name="OCTUBRE_DIS" Type="float" />
+          <Property Name="NOVIEMBRE_DIS" Type="float" />
+          <Property Name="DICIEMBRE_DIS" Type="float" />
+        </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.SPARTIDAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="SPARTIDAS">
@@ -194,10 +276,55 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <Property Name="CLV_FUENTE" Type="int" />
           <Property Name="FUENTE" Type="nvarchar" MaxLength="300" />
         </EntityType>
+        <Function Name="UpdateAnalytic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="SIENCHAFAModelStoreContainer">
           <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TPRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.TPRESUPUESTO_ANALITICOXUNIDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="Self.PRESUPUESTOS_ANALITICO" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRESUPUESTOS_ANALITICO].[CLV_UNIDADM] AS [CLV_UNIDADM], 
+    [PRESUPUESTOS_ANALITICO].[UNIDADM] AS [UNIDADM], 
+    [PRESUPUESTOS_ANALITICO].[CLV_PARTID] AS [CLV_PARTID], 
+    [PRESUPUESTOS_ANALITICO].[PARTIDA] AS [PARTIDA], 
+    [PRESUPUESTOS_ANALITICO].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTOS_ANALITICO].[ENERO_COM] AS [ENERO_COM], 
+    [PRESUPUESTOS_ANALITICO].[FEBRERO_COM] AS [FEBRERO_COM], 
+    [PRESUPUESTOS_ANALITICO].[MARZO_COM] AS [MARZO_COM], 
+    [PRESUPUESTOS_ANALITICO].[ABRIL_COM] AS [ABRIL_COM], 
+    [PRESUPUESTOS_ANALITICO].[MAYO_COM] AS [MAYO_COM], 
+    [PRESUPUESTOS_ANALITICO].[JUNIO_COM] AS [JUNIO_COM], 
+    [PRESUPUESTOS_ANALITICO].[JULIO_COM] AS [JULIO_COM], 
+    [PRESUPUESTOS_ANALITICO].[AGOSTO_COM] AS [AGOSTO_COM], 
+    [PRESUPUESTOS_ANALITICO].[SEPTIEMBRE_COM] AS [SEPTIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[OCTUBRE_COM] AS [OCTUBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[NOVIEMBRE_COM] AS [NOVIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[DICIEMBRE_COM] AS [DICIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
+    FROM [dbo].[PRESUPUESTOS_ANALITICO] AS [PRESUPUESTOS_ANALITICO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="Self.PRESUPUESTOS_ANALITICO_1000" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRESUPUESTOS_ANALITICO_1000].[CLV_PARTID] AS [CLV_PARTID], 
+    [PRESUPUESTOS_ANALITICO_1000].[PARTIDA] AS [PARTIDA], 
+    [PRESUPUESTOS_ANALITICO_1000].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTOS_ANALITICO_1000].[ENERO_DEV] AS [ENERO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[FEBRERO_DEV] AS [FEBRERO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[MARZO_DEV] AS [MARZO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[ABRIL_DEV] AS [ABRIL_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[MAYO_DEV] AS [MAYO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[JUNIO_DEV] AS [JUNIO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[JULIO_DEV] AS [JULIO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[AGOSTO_DEV] AS [AGOSTO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[SEPTIEMBRE_DEV] AS [SEPTIEMBRE_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO_1000].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO_1000].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
+    FROM [dbo].[PRESUPUESTOS_ANALITICO_1000] AS [PRESUPUESTOS_ANALITICO_1000]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SPARTIDAS" EntityType="Self.SPARTIDAS" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SPARTIDAS].[ID_PROYECTO] AS [ID_PROYECTO], 
@@ -299,6 +426,10 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <EntitySet Name="DETALLEMOMENTOS" EntityType="SIENCHAFAModel.DETALLEMOMENTOS" />
           <EntitySet Name="VtPresupuesto" EntityType="SIENCHAFAModel.VtPresupuesto" />
           <EntitySet Name="SPARTIDAS" EntityType="SIENCHAFAModel.SPARTIDAS" />
+          <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
+          <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
+          <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
+          <FunctionImport Name="UpdateAnalytic" />
         </EntityContainer>
         <EntityType Name="Proyectos">
           <Key>
@@ -484,6 +615,84 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <Property Name="CLV_FUENTE" Type="Int32" />
           <Property Name="CLV_RECURSO" Type="Int32" />
           <Property Name="CLV_CAPITULO" Type="Int32" />
+        </EntityType>
+        <EntityType Name="PRESUPUESTOS_ANALITICO">
+          <Key>
+            <PropertyRef Name="CLV_PARTID" />
+          </Key>
+          <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+          <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFICADO" Type="Double" />
+          <Property Name="ENERO_COM" Type="Double" />
+          <Property Name="FEBRERO_COM" Type="Double" />
+          <Property Name="MARZO_COM" Type="Double" />
+          <Property Name="ABRIL_COM" Type="Double" />
+          <Property Name="MAYO_COM" Type="Double" />
+          <Property Name="JUNIO_COM" Type="Double" />
+          <Property Name="JULIO_COM" Type="Double" />
+          <Property Name="AGOSTO_COM" Type="Double" />
+          <Property Name="SEPTIEMBRE_COM" Type="Double" />
+          <Property Name="OCTUBRE_COM" Type="Double" />
+          <Property Name="NOVIEMBRE_COM" Type="Double" />
+          <Property Name="DICIEMBRE_COM" Type="Double" />
+          <Property Name="OCTUBRE_DIS" Type="Double" />
+          <Property Name="NOVIEMBRE_DIS" Type="Double" />
+          <Property Name="DICIEMBRE_DIS" Type="Double" />
+        </EntityType>
+        <EntityType Name="PRESUPUESTOS_ANALITICO_1000">
+          <Key>
+            <PropertyRef Name="CLV_PARTID" />
+          </Key>
+          <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+          <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFICADO" Type="Double" />
+          <Property Name="ENERO_DEV" Type="Double" />
+          <Property Name="FEBRERO_DEV" Type="Double" />
+          <Property Name="MARZO_DEV" Type="Double" />
+          <Property Name="ABRIL_DEV" Type="Double" />
+          <Property Name="MAYO_DEV" Type="Double" />
+          <Property Name="JUNIO_DEV" Type="Double" />
+          <Property Name="JULIO_DEV" Type="Double" />
+          <Property Name="AGOSTO_DEV" Type="Double" />
+          <Property Name="SEPTIEMBRE_DEV" Type="Double" />
+          <Property Name="OCTUBRE_DIS" Type="Double" />
+          <Property Name="NOVIEMBRE_DIS" Type="Double" />
+          <Property Name="DICIEMBRE_DIS" Type="Double" />
+        </EntityType>
+        <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_RECURSO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="N_PROGRAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PROG_PRESUP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
+          <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MODIFICADO" Type="Double" />
+          <Property Name="COMPROMETIDO" Type="Double" />
+          <Property Name="OCTUBRE_DIS" Type="Double" />
+          <Property Name="NOVIEMBRE_DIS" Type="Double" />
+          <Property Name="DICIEMBRE_DIS" Type="Double" />
+          <Property Name="ENERO_EJE" Type="Double" />
+          <Property Name="FEBRERO_EJE" Type="Double" />
+          <Property Name="MARZO_EJE" Type="Double" />
+          <Property Name="ABRIL_EJE" Type="Double" />
+          <Property Name="MAYO_EJE" Type="Double" />
+          <Property Name="JUNIO_EJE" Type="Double" />
+          <Property Name="JULIO_EJE" Type="Double" />
+          <Property Name="AGOSTO_EJE" Type="Double" />
+          <Property Name="SEPTIEMBRE_EJE" Type="Double" />
+          <Property Name="OCTUBRE_EJE" Type="Double" />
+          <Property Name="NOVIEMBRE_EJE" Type="Double" />
+          <Property Name="DICIEMBRE_EJE" Type="Double" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -675,6 +884,88 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PRESUPUESTOS_ANALITICO">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTOS_ANALITICO">
+              <MappingFragment StoreEntitySet="PRESUPUESTOS_ANALITICO">
+                <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
+                <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
+                <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
+                <ScalarProperty Name="DICIEMBRE_COM" ColumnName="DICIEMBRE_COM" />
+                <ScalarProperty Name="NOVIEMBRE_COM" ColumnName="NOVIEMBRE_COM" />
+                <ScalarProperty Name="OCTUBRE_COM" ColumnName="OCTUBRE_COM" />
+                <ScalarProperty Name="SEPTIEMBRE_COM" ColumnName="SEPTIEMBRE_COM" />
+                <ScalarProperty Name="AGOSTO_COM" ColumnName="AGOSTO_COM" />
+                <ScalarProperty Name="JULIO_COM" ColumnName="JULIO_COM" />
+                <ScalarProperty Name="JUNIO_COM" ColumnName="JUNIO_COM" />
+                <ScalarProperty Name="MAYO_COM" ColumnName="MAYO_COM" />
+                <ScalarProperty Name="ABRIL_COM" ColumnName="ABRIL_COM" />
+                <ScalarProperty Name="MARZO_COM" ColumnName="MARZO_COM" />
+                <ScalarProperty Name="FEBRERO_COM" ColumnName="FEBRERO_COM" />
+                <ScalarProperty Name="ENERO_COM" ColumnName="ENERO_COM" />
+                <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
+                <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
+                <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />
+                <ScalarProperty Name="UNIDADM" ColumnName="UNIDADM" />
+                <ScalarProperty Name="CLV_UNIDADM" ColumnName="CLV_UNIDADM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRESUPUESTOS_ANALITICO_1000">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000">
+              <MappingFragment StoreEntitySet="PRESUPUESTOS_ANALITICO_1000">
+                <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
+                <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
+                <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
+                <ScalarProperty Name="SEPTIEMBRE_DEV" ColumnName="SEPTIEMBRE_DEV" />
+                <ScalarProperty Name="AGOSTO_DEV" ColumnName="AGOSTO_DEV" />
+                <ScalarProperty Name="JULIO_DEV" ColumnName="JULIO_DEV" />
+                <ScalarProperty Name="JUNIO_DEV" ColumnName="JUNIO_DEV" />
+                <ScalarProperty Name="MAYO_DEV" ColumnName="MAYO_DEV" />
+                <ScalarProperty Name="ABRIL_DEV" ColumnName="ABRIL_DEV" />
+                <ScalarProperty Name="MARZO_DEV" ColumnName="MARZO_DEV" />
+                <ScalarProperty Name="FEBRERO_DEV" ColumnName="FEBRERO_DEV" />
+                <ScalarProperty Name="ENERO_DEV" ColumnName="ENERO_DEV" />
+                <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
+                <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
+                <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRESUPUESTO_ANALITICOXUNIDAD">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD">
+              <MappingFragment StoreEntitySet="TPRESUPUESTO_ANALITICOXUNIDAD">
+                <ScalarProperty Name="DICIEMBRE_EJE" ColumnName="DICIEMBRE_EJE" />
+                <ScalarProperty Name="NOVIEMBRE_EJE" ColumnName="NOVIEMBRE_EJE" />
+                <ScalarProperty Name="OCTUBRE_EJE" ColumnName="OCTUBRE_EJE" />
+                <ScalarProperty Name="SEPTIEMBRE_EJE" ColumnName="SEPTIEMBRE_EJE" />
+                <ScalarProperty Name="AGOSTO_EJE" ColumnName="AGOSTO_EJE" />
+                <ScalarProperty Name="JULIO_EJE" ColumnName="JULIO_EJE" />
+                <ScalarProperty Name="JUNIO_EJE" ColumnName="JUNIO_EJE" />
+                <ScalarProperty Name="MAYO_EJE" ColumnName="MAYO_EJE" />
+                <ScalarProperty Name="ABRIL_EJE" ColumnName="ABRIL_EJE" />
+                <ScalarProperty Name="MARZO_EJE" ColumnName="MARZO_EJE" />
+                <ScalarProperty Name="FEBRERO_EJE" ColumnName="FEBRERO_EJE" />
+                <ScalarProperty Name="ENERO_EJE" ColumnName="ENERO_EJE" />
+                <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
+                <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
+                <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
+                <ScalarProperty Name="COMPROMETIDO" ColumnName="COMPROMETIDO" />
+                <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
+                <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
+                <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />
+                <ScalarProperty Name="PROG_PRESUP" ColumnName="PROG_PRESUP" />
+                <ScalarProperty Name="N_PROGRAMA" ColumnName="N_PROGRAMA" />
+                <ScalarProperty Name="CAPITULO" ColumnName="CAPITULO" />
+                <ScalarProperty Name="CLV_CAPITU" ColumnName="CLV_CAPITU" />
+                <ScalarProperty Name="RECURSO" ColumnName="RECURSO" />
+                <ScalarProperty Name="CLV_RECURSO" ColumnName="CLV_RECURSO" />
+                <ScalarProperty Name="UNIDADM" ColumnName="UNIDADM" />
+                <ScalarProperty Name="CLV_UNIDADM" ColumnName="CLV_UNIDADM" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -12,6 +12,15 @@ var PRESUPESTO = PRESUPESTO || {
     TypeTable: {'Anual': 1, 'Mensual': 2},
     INICIALIZAR: {
         Eventos: function () {
+            $('#cmdAddFiles').on('click', function () {
+                $('#DivUploadFiles').show();
+                $('#DivList').hide();
+            });
+            $('#cmdReturnList').on('click', function () {
+                $('#DivUploadFiles').hide();
+                $('#DivList').show();
+            });
+
             $('#cmdUpload').on('click', function (event) {
                 PRESUPESTO.ARCHIVOS.Enviar();
                 event.stopPropagation();
@@ -345,11 +354,20 @@ var PRESUPESTO = PRESUPESTO || {
             return true;
         },
         showResponse: function (data) {
-            if (typeof (data.Message) != "undefined") {
-                alert(data.Message);
+            console.log('showResponse:' + data);
+            if (data == "ok") {
+                Swal.fire(
+                    'Cargado!',
+                    'Archivos cargados con éxito',
+                    'success'
+                );
             }
             else {
-                alert('Archivos cargados con éxito');
+                Swal.fire(
+                    'Error!',
+                    data.Message,
+                    'error'
+                );
             }
         },
         Validar: function () {
@@ -357,17 +375,16 @@ var PRESUPESTO = PRESUPESTO || {
               
                 return false;
             }
+            /*
             if ($('#FileInput2').val() == '') {
 
                 return false;
-            }
+            }*/
 
             return true;
         },
         Enviar: function (event) {
-            
             if (this.Validar()) {
-
                 Swal.fire({
                     title: '',
                     html: 'Espere un momento...',
@@ -379,45 +396,29 @@ var PRESUPESTO = PRESUPESTO || {
                         Swal.showLoading()
                     },
                     didOpen: () => {
-
-                        var options = {
-                            beforeSubmit: this.showRequest,
-                            success: this.showResponse,
-                            url: './Home/CargarArchivos',
-                            type: 'post',
-                            dataType: 'json'
-                        };
-
-                        $('#frm').submit(function () {
-                            $(this).ajaxSubmit(options);
-                            return false;
-                        });
-
-                        $('#frm').submit();
-
-                        /*
-                        const formData = new FormData();
-                        formData.append('FileInput1', $('#FileInput1').get(0).files[0]);
-                        formData.append('FileInput2', $('#FileInput2').get(0).files[0]);
-                        return fetch('./Home/CargarArchivos', { method: 'POST', body: formData })
-                            .then(response => {
-                                return response.json()
-                                    .then((json) => {
-                                        return Promise.resolve(json)
-                                    })
-                            })
-                            .then(data => {
-                                alert('Archivos cargados con exito');
-                                Swal.close();
-                            })
-                            .catch(error => {
-                                alert('Error: ' + error);
-                            });
-                        */
+                        PRESUPESTO.ARCHIVOS.Upload();
                     },
                 });
                 
             }
+        },
+        Upload: async () => {
+            return await new Promise(resolve => {
+                var options = {
+                    beforeSubmit: this.showRequest,
+                    success: this.showResponse,
+                    url: UrlRelative + 'Home/CargarArchivos',
+                    type: 'post',
+                    dataType: 'json'
+                };
+
+                $('#frm').submit(function () {
+                    $(this).ajaxSubmit(options);
+                    return false;
+                });
+
+                $('#frm').submit();
+            });
         }
     },
     BASE: {
@@ -445,7 +446,7 @@ var PRESUPESTO = PRESUPESTO || {
                             Recursos: $('#cboRecurso').selectpicker('val').toString(),
                             Capitulos: $('#cboCapitulo').selectpicker('val').toString(),
                         };
-                        return fetch('./Home/SearchMensual?Periodos=' + data.Periodos + '&Unidades=' + data.Unidades + '&Partidas=' + data.Partidas + '&Proyectos=' + data.Proyectos + '&Fuentes=' + data.Fuentes + '&Recursos=' + data.Recursos + '&Capitulos=' + data.Capitulos, { method: 'GET' })
+                        return fetch(UrlRelative + 'Home/SearchMensual?Periodos=' + data.Periodos + '&Unidades=' + data.Unidades + '&Partidas=' + data.Partidas + '&Proyectos=' + data.Proyectos + '&Fuentes=' + data.Fuentes + '&Recursos=' + data.Recursos + '&Capitulos=' + data.Capitulos, { method: 'GET' })
                             .then(response => {
 
                                 return response.json()
@@ -460,8 +461,8 @@ var PRESUPESTO = PRESUPESTO || {
                                 $(jQuery.parseJSON(JSON.stringify(data))).each(function () {
                                     var row = '<tr>';
                                     row += '    <td>' + this.MOMENTO + '</td>';
-                                    row += '    <td>' + this.PROYECTO + '</td>';
-                                    row += '    <td>' + this.PARTIDA + '</td>';
+                                    row += '    <td>(' + this.ID_PROYECTO + ') ' + this.PROYECTO + '</td>';
+                                    row += '    <td>(' + this.CLV_PARTID + ') ' + this.PARTIDA + '</td>';
 
                                     if (ArrayMonth.find(element => element == 1))
                                         row += '    <td style="text-align:right;">' + this.ENERO.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + '</td>';
@@ -513,7 +514,7 @@ var PRESUPESTO = PRESUPESTO || {
                     Recursos: $('#cboRecurso').selectpicker('val').toString(),
                     Capitulos: $('#cboCapitulo').selectpicker('val').toString(),
                 };
-                return fetch('./Home/SearchAnual?Periodos=' + data.Periodos + '&Unidades=' + data.Unidades + '&Partidas=' + data.Partidas + '&Proyectos=' + data.Proyectos + '&Fuentes=' + data.Fuentes + '&Recursos=' + data.Recursos + '&Capitulos=' + data.Capitulos, { method: 'GET' })
+                return fetch(UrlRelative + 'Home/SearchAnual?Periodos=' + data.Periodos + '&Unidades=' + data.Unidades + '&Partidas=' + data.Partidas + '&Proyectos=' + data.Proyectos + '&Fuentes=' + data.Fuentes + '&Recursos=' + data.Recursos + '&Capitulos=' + data.Capitulos, { method: 'GET' })
                     .then(response => {
                         return response.json()
                             .then((json) => {
@@ -573,23 +574,39 @@ var PRESUPESTO = PRESUPESTO || {
             }
         },
         Delete: function () {
-            alert('Se eliminara todo');
-            $.ajax({
-                type: 'GET',
-                url:  '/Home/DeleteDatabase',
-                async: true,
-                dataType: "json",
-                data: {},
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                    //QPLANT.Authorize = data;
-                    alert('Eliminado con exito');
-                    document.location = '/Home/';
+            Swal.fire({
+                title: '',
+                html: 'Espere un momento...',
+                allowOutsideClick: false,
+                showCloseButton: false,
+                showCancelButton: false,
+                showConfirmButton: false,
+                willOpen: () => {
+                    Swal.showLoading()
                 },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    //jError((JSON.parse(xhr.responseText)).Message, 'Error');
-                }
+                didOpen: async () => {
+                    return fetch(UrlRelative + 'Home/DeleteDatabase', { method: 'GET' })
+                        .then(response => {
+                            return response.json()
+                                .then((json) => {
+                                    if (response.ok) {
+                                        return Promise.resolve(json)
+                                    }
+                                    return Promise.reject(json)
+                                })
+                        })
+                        .then(data => {
+                            document.location = UrlRelative + 'Home/';
+                        }).catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Error',
+                                text: '' + error,
+                            })
+                        });
+                },
             });
+            
         }
     }
 }

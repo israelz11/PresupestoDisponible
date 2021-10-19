@@ -90,6 +90,88 @@
     <Property Name="descripcion" Type="nvarchar" MaxLength="1000" />
     <Property Name="id_dependencia" Type="int" />
   </EntityType>
+  <EntityType Name="TPRESUPUESTO_ANALITICOXUNIDAD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLV_UNIDADM" Type="nvarchar" MaxLength="5" />
+    <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_RECURSO" Type="nvarchar" MaxLength="10" />
+    <Property Name="RECURSO" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_CAPITU" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="CAPITULO" Type="nvarchar" MaxLength="60" />
+    <Property Name="N_PROGRAMA" Type="nvarchar" MaxLength="50" />
+    <Property Name="PROG_PRESUP" Type="nvarchar" MaxLength="250" />
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="PARTIDA" Type="nvarchar" MaxLength="150" />
+    <Property Name="MODIFICADO" Type="float" />
+    <Property Name="COMPROMETIDO" Type="float" />
+    <Property Name="OCTUBRE_DIS" Type="float" />
+    <Property Name="NOVIEMBRE_DIS" Type="float" />
+    <Property Name="DICIEMBRE_DIS" Type="float" />
+    <Property Name="ENERO_EJE" Type="float" />
+    <Property Name="FEBRERO_EJE" Type="float" />
+    <Property Name="MARZO_EJE" Type="float" />
+    <Property Name="ABRIL_EJE" Type="float" />
+    <Property Name="MAYO_EJE" Type="float" />
+    <Property Name="JUNIO_EJE" Type="float" />
+    <Property Name="JULIO_EJE" Type="float" />
+    <Property Name="AGOSTO_EJE" Type="float" />
+    <Property Name="SEPTIEMBRE_EJE" Type="float" />
+    <Property Name="OCTUBRE_EJE" Type="float" />
+    <Property Name="NOVIEMBRE_EJE" Type="float" />
+    <Property Name="DICIEMBRE_EJE" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PRESUPUESTOS_ANALITICO">
+    <Key>
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
+    <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
+    <Property Name="MODIFICADO" Type="float" />
+    <Property Name="ENERO_COM" Type="float" />
+    <Property Name="FEBRERO_COM" Type="float" />
+    <Property Name="MARZO_COM" Type="float" />
+    <Property Name="ABRIL_COM" Type="float" />
+    <Property Name="MAYO_COM" Type="float" />
+    <Property Name="JUNIO_COM" Type="float" />
+    <Property Name="JULIO_COM" Type="float" />
+    <Property Name="AGOSTO_COM" Type="float" />
+    <Property Name="SEPTIEMBRE_COM" Type="float" />
+    <Property Name="OCTUBRE_COM" Type="float" />
+    <Property Name="NOVIEMBRE_COM" Type="float" />
+    <Property Name="DICIEMBRE_COM" Type="float" />
+    <Property Name="OCTUBRE_DIS" Type="float" />
+    <Property Name="NOVIEMBRE_DIS" Type="float" />
+    <Property Name="DICIEMBRE_DIS" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO_1000' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PRESUPUESTOS_ANALITICO_1000">
+    <Key>
+      <PropertyRef Name="CLV_PARTID" />
+    </Key>
+    <Property Name="CLV_PARTID" Type="int" Nullable="false" />
+    <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
+    <Property Name="MODIFICADO" Type="float" />
+    <Property Name="ENERO_DEV" Type="float" />
+    <Property Name="FEBRERO_DEV" Type="float" />
+    <Property Name="MARZO_DEV" Type="float" />
+    <Property Name="ABRIL_DEV" Type="float" />
+    <Property Name="MAYO_DEV" Type="float" />
+    <Property Name="JUNIO_DEV" Type="float" />
+    <Property Name="JULIO_DEV" Type="float" />
+    <Property Name="AGOSTO_DEV" Type="float" />
+    <Property Name="SEPTIEMBRE_DEV" Type="float" />
+    <Property Name="OCTUBRE_DIS" Type="float" />
+    <Property Name="NOVIEMBRE_DIS" Type="float" />
+    <Property Name="DICIEMBRE_DIS" Type="float" />
+  </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.SPARTIDAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="SPARTIDAS">
@@ -189,10 +271,55 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     <Property Name="CLV_FUENTE" Type="int" />
     <Property Name="FUENTE" Type="nvarchar" MaxLength="300" />
   </EntityType>
+  <Function Name="UpdateAnalytic" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="SIENCHAFAModelStoreContainer">
     <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TPRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.TPRESUPUESTO_ANALITICOXUNIDAD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="Self.PRESUPUESTOS_ANALITICO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PRESUPUESTOS_ANALITICO].[CLV_UNIDADM] AS [CLV_UNIDADM], 
+    [PRESUPUESTOS_ANALITICO].[UNIDADM] AS [UNIDADM], 
+    [PRESUPUESTOS_ANALITICO].[CLV_PARTID] AS [CLV_PARTID], 
+    [PRESUPUESTOS_ANALITICO].[PARTIDA] AS [PARTIDA], 
+    [PRESUPUESTOS_ANALITICO].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTOS_ANALITICO].[ENERO_COM] AS [ENERO_COM], 
+    [PRESUPUESTOS_ANALITICO].[FEBRERO_COM] AS [FEBRERO_COM], 
+    [PRESUPUESTOS_ANALITICO].[MARZO_COM] AS [MARZO_COM], 
+    [PRESUPUESTOS_ANALITICO].[ABRIL_COM] AS [ABRIL_COM], 
+    [PRESUPUESTOS_ANALITICO].[MAYO_COM] AS [MAYO_COM], 
+    [PRESUPUESTOS_ANALITICO].[JUNIO_COM] AS [JUNIO_COM], 
+    [PRESUPUESTOS_ANALITICO].[JULIO_COM] AS [JULIO_COM], 
+    [PRESUPUESTOS_ANALITICO].[AGOSTO_COM] AS [AGOSTO_COM], 
+    [PRESUPUESTOS_ANALITICO].[SEPTIEMBRE_COM] AS [SEPTIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[OCTUBRE_COM] AS [OCTUBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[NOVIEMBRE_COM] AS [NOVIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[DICIEMBRE_COM] AS [DICIEMBRE_COM], 
+    [PRESUPUESTOS_ANALITICO].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
+    FROM [dbo].[PRESUPUESTOS_ANALITICO] AS [PRESUPUESTOS_ANALITICO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="Self.PRESUPUESTOS_ANALITICO_1000" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PRESUPUESTOS_ANALITICO_1000].[CLV_PARTID] AS [CLV_PARTID], 
+    [PRESUPUESTOS_ANALITICO_1000].[PARTIDA] AS [PARTIDA], 
+    [PRESUPUESTOS_ANALITICO_1000].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTOS_ANALITICO_1000].[ENERO_DEV] AS [ENERO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[FEBRERO_DEV] AS [FEBRERO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[MARZO_DEV] AS [MARZO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[ABRIL_DEV] AS [ABRIL_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[MAYO_DEV] AS [MAYO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[JUNIO_DEV] AS [JUNIO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[JULIO_DEV] AS [JULIO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[AGOSTO_DEV] AS [AGOSTO_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[SEPTIEMBRE_DEV] AS [SEPTIEMBRE_DEV], 
+    [PRESUPUESTOS_ANALITICO_1000].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO_1000].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
+    [PRESUPUESTOS_ANALITICO_1000].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
+    FROM [dbo].[PRESUPUESTOS_ANALITICO_1000] AS [PRESUPUESTOS_ANALITICO_1000]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="SPARTIDAS" EntityType="Self.SPARTIDAS" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [SPARTIDAS].[ID_PROYECTO] AS [ID_PROYECTO], 
