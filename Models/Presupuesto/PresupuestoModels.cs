@@ -265,7 +265,7 @@ namespace PresupDisponible.Models.Presupuesto
             {
                 using (dbcontex = new SIENCHAFAEntities())
                 {
-                    dbcontex.Database.ExecuteSqlCommand("DELETE FROM Atuevaluacion_demo");
+                    //dbcontex.Database.ExecuteSqlCommand("DELETE FROM Atuevaluacion_demo");
                     dbcontex.Database.ExecuteSqlCommand("DELETE FROM DETALLEMOMENTOS");
 
                     return "";

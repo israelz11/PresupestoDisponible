@@ -8,8 +8,8 @@
     <EntitySet Name="SPARTIDAS" EntityType="SIENCHAFAModel.SPARTIDAS" />
     <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
     <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
-    <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
     <FunctionImport Name="UpdateAnalytic" />
+    <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
   </EntityContainer>
   <EntityType Name="Proyectos">
     <Key>
@@ -243,21 +243,20 @@
   </EntityType>
   <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="CLV_CAPITU" />
+      <PropertyRef Name="CLV_PARTID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
     <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="CLV_RECURSO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
     <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-    <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-    <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
     <Property Name="N_PROGRAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="PROG_PRESUP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
-    <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="MODIFICADO" Type="Double" />
-    <Property Name="COMPROMETIDO" Type="Double" />
     <Property Name="OCTUBRE_DIS" Type="Double" />
     <Property Name="NOVIEMBRE_DIS" Type="Double" />
     <Property Name="DICIEMBRE_DIS" Type="Double" />

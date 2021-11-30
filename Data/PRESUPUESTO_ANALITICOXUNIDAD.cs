@@ -14,7 +14,6 @@ namespace PresupDisponible.Data
     
     public partial class PRESUPUESTO_ANALITICOXUNIDAD
     {
-        public int ID { get; set; }
         public string CLV_UNIDADM { get; set; }
         public string UNIDADM { get; set; }
         public string CLV_RECURSO { get; set; }
@@ -26,7 +25,6 @@ namespace PresupDisponible.Data
         public int CLV_PARTID { get; set; }
         public string PARTIDA { get; set; }
         public Nullable<double> MODIFICADO { get; set; }
-        public Nullable<double> COMPROMETIDO { get; set; }
         public Nullable<double> OCTUBRE_DIS { get; set; }
         public Nullable<double> NOVIEMBRE_DIS { get; set; }
         public Nullable<double> DICIEMBRE_DIS { get; set; }

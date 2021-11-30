@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="SIENCHAFAModel.SPARTIDAS" Width="1.5" PointX="0.875" PointY="1" IsExpanded="false" />
         <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" Width="1.5" PointX="3.5" PointY="1" IsExpanded="false" />
         <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" Width="1.5" PointX="3.5" PointY="0.5" IsExpanded="false" />
-        <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" Width="1.5" PointX="3.5" PointY="1.5" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" Width="1.5" PointX="3.5" PointY="1.5" IsExpanded="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

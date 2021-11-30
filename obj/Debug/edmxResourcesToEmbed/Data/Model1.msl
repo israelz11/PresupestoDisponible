@@ -232,9 +232,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
     <EntitySetMapping Name="PRESUPUESTO_ANALITICOXUNIDAD">
       <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD">
-        <MappingFragment StoreEntitySet="TPRESUPUESTO_ANALITICOXUNIDAD">
+        <MappingFragment StoreEntitySet="PRESUPUESTO_ANALITICOXUNIDAD">
           <ScalarProperty Name="DICIEMBRE_EJE" ColumnName="DICIEMBRE_EJE" />
           <ScalarProperty Name="NOVIEMBRE_EJE" ColumnName="NOVIEMBRE_EJE" />
           <ScalarProperty Name="OCTUBRE_EJE" ColumnName="OCTUBRE_EJE" />
@@ -250,7 +251,6 @@
           <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
           <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
           <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
-          <ScalarProperty Name="COMPROMETIDO" ColumnName="COMPROMETIDO" />
           <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
           <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
           <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />
@@ -262,10 +262,8 @@
           <ScalarProperty Name="CLV_RECURSO" ColumnName="CLV_RECURSO" />
           <ScalarProperty Name="UNIDADM" ColumnName="UNIDADM" />
           <ScalarProperty Name="CLV_UNIDADM" ColumnName="CLV_UNIDADM" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
   </EntityContainerMapping>
 </Mapping>

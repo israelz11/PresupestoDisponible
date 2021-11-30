@@ -95,23 +95,24 @@
           <Property Name="descripcion" Type="nvarchar" MaxLength="1000" />
           <Property Name="id_dependencia" Type="int" />
         </EntityType>
-        <EntityType Name="TPRESUPUESTO_ANALITICOXUNIDAD">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTO_ANALITICOXUNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="CLV_CAPITU" />
+            <PropertyRef Name="CLV_PARTID" />
           </Key>
-          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CLV_UNIDADM" Type="nvarchar" MaxLength="5" />
+          <Property Name="CLV_UNIDADM" Type="varchar" MaxLength="5" />
           <Property Name="UNIDADM" Type="nvarchar" MaxLength="300" />
           <Property Name="CLV_RECURSO" Type="nvarchar" MaxLength="10" />
           <Property Name="RECURSO" Type="nvarchar" MaxLength="300" />
-          <Property Name="CLV_CAPITU" Type="nvarchar" MaxLength="4" Nullable="false" />
-          <Property Name="CAPITULO" Type="nvarchar" MaxLength="60" />
+          <Property Name="CLV_CAPITU" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="CAPITULO" Type="varchar" MaxLength="60" />
           <Property Name="N_PROGRAMA" Type="nvarchar" MaxLength="50" />
           <Property Name="PROG_PRESUP" Type="nvarchar" MaxLength="250" />
           <Property Name="CLV_PARTID" Type="int" Nullable="false" />
-          <Property Name="PARTIDA" Type="nvarchar" MaxLength="150" />
+          <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
           <Property Name="MODIFICADO" Type="float" />
-          <Property Name="COMPROMETIDO" Type="float" />
           <Property Name="OCTUBRE_DIS" Type="float" />
           <Property Name="NOVIEMBRE_DIS" Type="float" />
           <Property Name="DICIEMBRE_DIS" Type="float" />
@@ -281,7 +282,36 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TPRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.TPRESUPUESTO_ANALITICOXUNIDAD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.PRESUPUESTO_ANALITICOXUNIDAD" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_UNIDADM] AS [CLV_UNIDADM], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[UNIDADM] AS [UNIDADM], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_RECURSO] AS [CLV_RECURSO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[RECURSO] AS [RECURSO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_CAPITU] AS [CLV_CAPITU], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[CAPITULO] AS [CAPITULO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[N_PROGRAMA] AS [N_PROGRAMA], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[PROG_PRESUP] AS [PROG_PRESUP], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_PARTID] AS [CLV_PARTID], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[PARTIDA] AS [PARTIDA], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[ENERO_EJE] AS [ENERO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[FEBRERO_EJE] AS [FEBRERO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[MARZO_EJE] AS [MARZO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[ABRIL_EJE] AS [ABRIL_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[MAYO_EJE] AS [MAYO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[JUNIO_EJE] AS [JUNIO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[JULIO_EJE] AS [JULIO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[AGOSTO_EJE] AS [AGOSTO_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[SEPTIEMBRE_EJE] AS [SEPTIEMBRE_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[OCTUBRE_EJE] AS [OCTUBRE_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[NOVIEMBRE_EJE] AS [NOVIEMBRE_EJE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[DICIEMBRE_EJE] AS [DICIEMBRE_EJE]
+    FROM [dbo].[PRESUPUESTO_ANALITICOXUNIDAD] AS [PRESUPUESTO_ANALITICOXUNIDAD]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="Self.PRESUPUESTOS_ANALITICO" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PRESUPUESTOS_ANALITICO].[CLV_UNIDADM] AS [CLV_UNIDADM], 
@@ -428,8 +458,8 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <EntitySet Name="SPARTIDAS" EntityType="SIENCHAFAModel.SPARTIDAS" />
           <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
           <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
-          <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
           <FunctionImport Name="UpdateAnalytic" />
+          <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
         </EntityContainer>
         <EntityType Name="Proyectos">
           <Key>
@@ -663,21 +693,20 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
         </EntityType>
         <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="CLV_CAPITU" />
+            <PropertyRef Name="CLV_PARTID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_UNIDADM" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="UNIDADM" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
           <Property Name="CLV_RECURSO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="RECURSO" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
-          <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="CLV_CAPITU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="CAPITULO" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
           <Property Name="N_PROGRAMA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PROG_PRESUP" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
-          <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="MODIFICADO" Type="Double" />
-          <Property Name="COMPROMETIDO" Type="Double" />
           <Property Name="OCTUBRE_DIS" Type="Double" />
           <Property Name="NOVIEMBRE_DIS" Type="Double" />
           <Property Name="DICIEMBRE_DIS" Type="Double" />
@@ -931,9 +960,10 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
           <EntitySetMapping Name="PRESUPUESTO_ANALITICOXUNIDAD">
             <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD">
-              <MappingFragment StoreEntitySet="TPRESUPUESTO_ANALITICOXUNIDAD">
+              <MappingFragment StoreEntitySet="PRESUPUESTO_ANALITICOXUNIDAD">
                 <ScalarProperty Name="DICIEMBRE_EJE" ColumnName="DICIEMBRE_EJE" />
                 <ScalarProperty Name="NOVIEMBRE_EJE" ColumnName="NOVIEMBRE_EJE" />
                 <ScalarProperty Name="OCTUBRE_EJE" ColumnName="OCTUBRE_EJE" />
@@ -949,7 +979,6 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
                 <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
                 <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
                 <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
-                <ScalarProperty Name="COMPROMETIDO" ColumnName="COMPROMETIDO" />
                 <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
                 <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
                 <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />
@@ -961,11 +990,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
                 <ScalarProperty Name="CLV_RECURSO" ColumnName="CLV_RECURSO" />
                 <ScalarProperty Name="UNIDADM" ColumnName="UNIDADM" />
                 <ScalarProperty Name="CLV_UNIDADM" ColumnName="CLV_UNIDADM" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
