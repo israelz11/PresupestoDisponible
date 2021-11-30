@@ -9,6 +9,7 @@
     <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
     <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
     <FunctionImport Name="UpdateAnalytic" />
+    <EntitySet Name="PROYPRES22" EntityType="SIENCHAFAModel.PROYPRES22" />
     <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
   </EntityContainer>
   <EntityType Name="Proyectos">
@@ -241,6 +242,46 @@
     <Property Name="NOVIEMBRE_DIS" Type="Double" />
     <Property Name="DICIEMBRE_DIS" Type="Double" />
   </EntityType>
+  <EntityType Name="PROYPRES22">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLV_PROG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PP22" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_PROY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+    <Property Name="CLV_PAR" Type="Int32" />
+    <Property Name="PARTIDA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IDUNIDAD" Type="Int32" />
+    <Property Name="UNIDADADM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="modmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RECURSO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="P2018" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="P2019" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="P2020" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="P2021" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NOV21" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PROMEDIO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IRREDUCTIBLE2022" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OBS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PP2022" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="solicitud" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ene" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FEB" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MAR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ABR" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MAY" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JUN" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="JUL" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AGO" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SEP" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OCT" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="NOV" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DIC" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TIPOGTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACIONES" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
     <Key>
       <PropertyRef Name="CLV_CAPITU" />
@@ -257,6 +298,9 @@
     <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
     <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
     <Property Name="MODIFICADO" Type="Double" />
+    <Property Name="COMPROMETIDO" Type="Double" />
+    <Property Name="DISPONIBLE" Type="Double" />
+    <Property Name="EJERCIDO" Type="Double" />
     <Property Name="OCTUBRE_DIS" Type="Double" />
     <Property Name="NOVIEMBRE_DIS" Type="Double" />
     <Property Name="DICIEMBRE_DIS" Type="Double" />

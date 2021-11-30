@@ -34,6 +34,7 @@ namespace PresupDisponible.Data
         public virtual DbSet<SPARTIDAS> SPARTIDAS { get; set; }
         public virtual DbSet<PRESUPUESTOS_ANALITICO> PRESUPUESTOS_ANALITICO { get; set; }
         public virtual DbSet<PRESUPUESTOS_ANALITICO_1000> PRESUPUESTOS_ANALITICO_1000 { get; set; }
+        public virtual DbSet<PROYPRES22> PROYPRES22 { get; set; }
         public virtual DbSet<PRESUPUESTO_ANALITICOXUNIDAD> PRESUPUESTO_ANALITICOXUNIDAD { get; set; }
     
         public virtual int UpdateAnalytic()

@@ -96,6 +96,48 @@
           <Property Name="id_dependencia" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PROYPRES22' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="PROYPRES22">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CLV_PROG" Type="nvarchar" MaxLength="50" />
+          <Property Name="PP22" Type="nvarchar" MaxLength="500" />
+          <Property Name="TIPO_PROY" Type="nvarchar" MaxLength="100" />
+          <Property Name="DESCRIPCION" Type="nchar" MaxLength="1000" />
+          <Property Name="CLV_PAR" Type="int" />
+          <Property Name="PARTIDA" Type="nvarchar" MaxLength="500" />
+          <Property Name="IDUNIDAD" Type="int" />
+          <Property Name="UNIDADADM" Type="nvarchar" MaxLength="500" />
+          <Property Name="modmar" Type="nvarchar" MaxLength="50" />
+          <Property Name="RECURSO" Type="nvarchar" MaxLength="500" />
+          <Property Name="P2018" Type="money" />
+          <Property Name="P2019" Type="money" />
+          <Property Name="P2020" Type="money" />
+          <Property Name="P2021" Type="money" />
+          <Property Name="NOV21" Type="money" />
+          <Property Name="PROMEDIO" Type="money" />
+          <Property Name="IRREDUCTIBLE2022" Type="money" />
+          <Property Name="OBS" Type="nvarchar" MaxLength="500" />
+          <Property Name="PP2022" Type="money" />
+          <Property Name="solicitud" Type="money" />
+          <Property Name="ene" Type="money" />
+          <Property Name="FEB" Type="money" />
+          <Property Name="MAR" Type="money" />
+          <Property Name="ABR" Type="money" />
+          <Property Name="MAY" Type="money" />
+          <Property Name="JUN" Type="money" />
+          <Property Name="JUL" Type="money" />
+          <Property Name="AGO" Type="money" />
+          <Property Name="SEP" Type="money" />
+          <Property Name="OCT" Type="money" />
+          <Property Name="NOV" Type="money" />
+          <Property Name="DIC" Type="money" />
+          <Property Name="TIPOGTO" Type="nvarchar" MaxLength="50" />
+          <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTO_ANALITICOXUNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
           <Key>
@@ -113,6 +155,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTO_ANALITICOXUNIDAD' 
           <Property Name="CLV_PARTID" Type="int" Nullable="false" />
           <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
           <Property Name="MODIFICADO" Type="float" />
+          <Property Name="COMPROMETIDO" Type="float" />
+          <Property Name="DISPONIBLE" Type="float" />
+          <Property Name="EJERCIDO" Type="float" />
           <Property Name="OCTUBRE_DIS" Type="float" />
           <Property Name="NOVIEMBRE_DIS" Type="float" />
           <Property Name="DICIEMBRE_DIS" Type="float" />
@@ -282,6 +327,45 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PROYPRES22" EntityType="Self.PROYPRES22" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PROYPRES22].[Id] AS [Id], 
+    [PROYPRES22].[CLV_PROG] AS [CLV_PROG], 
+    [PROYPRES22].[PP22] AS [PP22], 
+    [PROYPRES22].[TIPO_PROY] AS [TIPO_PROY], 
+    [PROYPRES22].[DESCRIPCION] AS [DESCRIPCION], 
+    [PROYPRES22].[CLV_PAR] AS [CLV_PAR], 
+    [PROYPRES22].[PARTIDA] AS [PARTIDA], 
+    [PROYPRES22].[IDUNIDAD] AS [IDUNIDAD], 
+    [PROYPRES22].[UNIDADADM] AS [UNIDADADM], 
+    [PROYPRES22].[modmar] AS [modmar], 
+    [PROYPRES22].[RECURSO] AS [RECURSO], 
+    [PROYPRES22].[P2018] AS [P2018], 
+    [PROYPRES22].[P2019] AS [P2019], 
+    [PROYPRES22].[P2020] AS [P2020], 
+    [PROYPRES22].[P2021] AS [P2021], 
+    [PROYPRES22].[NOV21] AS [NOV21], 
+    [PROYPRES22].[PROMEDIO] AS [PROMEDIO], 
+    [PROYPRES22].[IRREDUCTIBLE2022] AS [IRREDUCTIBLE2022], 
+    [PROYPRES22].[OBS] AS [OBS], 
+    [PROYPRES22].[PP2022] AS [PP2022], 
+    [PROYPRES22].[solicitud] AS [solicitud], 
+    [PROYPRES22].[ene] AS [ene], 
+    [PROYPRES22].[FEB] AS [FEB], 
+    [PROYPRES22].[MAR] AS [MAR], 
+    [PROYPRES22].[ABR] AS [ABR], 
+    [PROYPRES22].[MAY] AS [MAY], 
+    [PROYPRES22].[JUN] AS [JUN], 
+    [PROYPRES22].[JUL] AS [JUL], 
+    [PROYPRES22].[AGO] AS [AGO], 
+    [PROYPRES22].[SEP] AS [SEP], 
+    [PROYPRES22].[OCT] AS [OCT], 
+    [PROYPRES22].[NOV] AS [NOV], 
+    [PROYPRES22].[DIC] AS [DIC], 
+    [PROYPRES22].[TIPOGTO] AS [TIPOGTO], 
+    [PROYPRES22].[OBSERVACIONES] AS [OBSERVACIONES]
+    FROM [dbo].[PROYPRES22] AS [PROYPRES22]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.PRESUPUESTO_ANALITICOXUNIDAD" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_UNIDADM] AS [CLV_UNIDADM], 
@@ -295,6 +379,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_PARTID] AS [CLV_PARTID], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[PARTIDA] AS [PARTIDA], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[COMPROMETIDO] AS [COMPROMETIDO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[DISPONIBLE] AS [DISPONIBLE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[EJERCIDO] AS [EJERCIDO], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS], 
@@ -459,6 +546,7 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <EntitySet Name="PRESUPUESTOS_ANALITICO" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO" />
           <EntitySet Name="PRESUPUESTOS_ANALITICO_1000" EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" />
           <FunctionImport Name="UpdateAnalytic" />
+          <EntitySet Name="PROYPRES22" EntityType="SIENCHAFAModel.PROYPRES22" />
           <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
         </EntityContainer>
         <EntityType Name="Proyectos">
@@ -691,6 +779,46 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <Property Name="NOVIEMBRE_DIS" Type="Double" />
           <Property Name="DICIEMBRE_DIS" Type="Double" />
         </EntityType>
+        <EntityType Name="PROYPRES22">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CLV_PROG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PP22" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO_PROY" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <Property Name="CLV_PAR" Type="Int32" />
+          <Property Name="PARTIDA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IDUNIDAD" Type="Int32" />
+          <Property Name="UNIDADADM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="modmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RECURSO" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="P2018" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="P2019" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="P2020" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="P2021" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NOV21" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PROMEDIO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IRREDUCTIBLE2022" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OBS" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PP2022" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="solicitud" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ene" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="FEB" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MAR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ABR" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MAY" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="JUN" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="JUL" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AGO" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SEP" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OCT" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="NOV" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DIC" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TIPOGTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
           <Key>
             <PropertyRef Name="CLV_CAPITU" />
@@ -707,6 +835,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <Property Name="CLV_PARTID" Type="Int32" Nullable="false" />
           <Property Name="PARTIDA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="MODIFICADO" Type="Double" />
+          <Property Name="COMPROMETIDO" Type="Double" />
+          <Property Name="DISPONIBLE" Type="Double" />
+          <Property Name="EJERCIDO" Type="Double" />
           <Property Name="OCTUBRE_DIS" Type="Double" />
           <Property Name="NOVIEMBRE_DIS" Type="Double" />
           <Property Name="DICIEMBRE_DIS" Type="Double" />
@@ -961,6 +1092,47 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
+          <EntitySetMapping Name="PROYPRES22">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.PROYPRES22">
+              <MappingFragment StoreEntitySet="PROYPRES22">
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="TIPOGTO" ColumnName="TIPOGTO" />
+                <ScalarProperty Name="DIC" ColumnName="DIC" />
+                <ScalarProperty Name="NOV" ColumnName="NOV" />
+                <ScalarProperty Name="OCT" ColumnName="OCT" />
+                <ScalarProperty Name="SEP" ColumnName="SEP" />
+                <ScalarProperty Name="AGO" ColumnName="AGO" />
+                <ScalarProperty Name="JUL" ColumnName="JUL" />
+                <ScalarProperty Name="JUN" ColumnName="JUN" />
+                <ScalarProperty Name="MAY" ColumnName="MAY" />
+                <ScalarProperty Name="ABR" ColumnName="ABR" />
+                <ScalarProperty Name="MAR" ColumnName="MAR" />
+                <ScalarProperty Name="FEB" ColumnName="FEB" />
+                <ScalarProperty Name="ene" ColumnName="ene" />
+                <ScalarProperty Name="solicitud" ColumnName="solicitud" />
+                <ScalarProperty Name="PP2022" ColumnName="PP2022" />
+                <ScalarProperty Name="OBS" ColumnName="OBS" />
+                <ScalarProperty Name="IRREDUCTIBLE2022" ColumnName="IRREDUCTIBLE2022" />
+                <ScalarProperty Name="PROMEDIO" ColumnName="PROMEDIO" />
+                <ScalarProperty Name="NOV21" ColumnName="NOV21" />
+                <ScalarProperty Name="P2021" ColumnName="P2021" />
+                <ScalarProperty Name="P2020" ColumnName="P2020" />
+                <ScalarProperty Name="P2019" ColumnName="P2019" />
+                <ScalarProperty Name="P2018" ColumnName="P2018" />
+                <ScalarProperty Name="RECURSO" ColumnName="RECURSO" />
+                <ScalarProperty Name="modmar" ColumnName="modmar" />
+                <ScalarProperty Name="UNIDADADM" ColumnName="UNIDADADM" />
+                <ScalarProperty Name="IDUNIDAD" ColumnName="IDUNIDAD" />
+                <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
+                <ScalarProperty Name="CLV_PAR" ColumnName="CLV_PAR" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="TIPO_PROY" ColumnName="TIPO_PROY" />
+                <ScalarProperty Name="PP22" ColumnName="PP22" />
+                <ScalarProperty Name="CLV_PROG" ColumnName="CLV_PROG" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="PRESUPUESTO_ANALITICOXUNIDAD">
             <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD">
               <MappingFragment StoreEntitySet="PRESUPUESTO_ANALITICOXUNIDAD">
@@ -979,6 +1151,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
                 <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
                 <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
                 <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
+                <ScalarProperty Name="EJERCIDO" ColumnName="EJERCIDO" />
+                <ScalarProperty Name="DISPONIBLE" ColumnName="DISPONIBLE" />
+                <ScalarProperty Name="COMPROMETIDO" ColumnName="COMPROMETIDO" />
                 <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
                 <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
                 <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />

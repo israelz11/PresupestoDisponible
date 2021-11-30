@@ -1,0 +1,177 @@
+﻿@model PresupDisponible.Models.Views.MasterDetailView
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script>
+        var UrlRelative = '@Url.Content("~/")';
+    </script>
+    <!-- Page title -->
+    <title>Presupuesto Maestro Detalle 2022</title>
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!--<link rel="shortcut icon" type="image/ico" href="favicon.ico" />-->
+    <!-- Vendor styles -->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/animate.css/animate.css" />
+    <!--<link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap-sweetalert-master/dist/sweetalert.css?val=@DateTime.Now.Ticks.ToString()" />-->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/sweetalert2-10.12.7/dist/sweetalert2.css?val=@DateTime.Now.Ticks.ToString()" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap/dist/css/bootstrap.css?val=@DateTime.Now.Ticks.ToString()" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/toastr/build/toastr.min.css?val=@DateTime.Now.Ticks.ToString()" />
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="@Url.Content("~/")Content/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/fonts/pe-icon-7-stroke/css/helper.css" />
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/bootstrap-select-master/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="@Url.Content("~/")Content/styles/style.css?val=@DateTime.Now.Ticks.ToString()">
+    <link rel="stylesheet" href="@Url.Content("~/")Content/vendor/datatables_plugins/integration/bootstrap/3/dataTables.bootstrap.css" />
+
+    <script src="@Url.Content("~/")Content/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/sweetalert2-10.12.7/dist/sweetalert2.min.js"></script>
+    <script src="@Url.Content("~/")Content/scripts/jquery.form.js"></script>
+
+    <script src="@Url.Content("~/")Content/vendor/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/bootstrap-select-master/js/bootstrap-select.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables_plugins/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/datatables_plugins/api/sum().js"></script>
+    <script src="@Url.Content("~/")Content/vendor/iCheck/icheck.min.js"></script>
+    <script src="@Url.Content("~/")Content/vendor/sparkline/index.js"></script>
+    <script src="@Url.Content("~/")Content/scripts/homer.js"></script>
+    <script src="@Url.Content("~/")Scripts/Home/MasterDetail.js?val=@DateTime.Now.Ticks.ToString()"></script>
+
+    <style>
+        .lineControl {
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0px;
+            border-bottom: 1px solid #ccc;
+            font-size: large;
+        }
+    </style>
+</head>
+<body class="blank">
+
+    <div id="header">
+        <div class="color-line">
+        </div>
+        <div id="logo" class="light-version" style="padding:0px !important;">
+            <img style="height: 50px;" src="~/Content/images/logotipo_horizontal_rgb.png">
+        </div>
+        <nav role="navigation">
+            <div class="header-link hide-menu"><i class="fa fa-bars"></i></div>
+            <div class="small-logo">
+                <span class="text-primary">PRESUPUESTO</span>
+            </div>
+
+            <div class="form-group">
+                <h3 style="margin-top: 0px; padding-top: 15px;">
+                    Presupuesto Maestro Detalle
+                </h3>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="boxed-wrapper">
+        <div id="wrapper">
+            <div class="row">
+                <div class="col-md-12" style="padding-left: 40px; padding-right: 40px; padding-top: 30px;">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            <div class="form-group">
+
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                                    Collapsible Group Item #1
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: 0px;">
+                                            <div class="panel-body">
+
+                                                <table class="table table-bordered table-striped" cellspacing="1" cellpadding="1">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Phone</th>
+                                                            <th>Street Address</th>
+                                                            <th>City</th>
+                                                            <th>Country</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Abraham</td>
+                                                            <td>076 9477 4896</td>
+                                                            <td>294-318 Duis Ave</td>
+                                                            <td>Vosselaar</td>
+                                                            <td>Belgium</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Phelan</td>
+                                                            <td>0500 034548</td>
+                                                            <td>680-1097 Mi Rd.</td>
+                                                            <td>Lavoir</td>
+                                                            <td>Pakistan</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Raya</td>
+                                                            <td>(01315) 27698</td>
+                                                            <td>Ap #289-8161 In Avenue</td>
+                                                            <td>Santomenna</td>
+                                                            <td>Burkina Faso</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Azalia</td>
+                                                            <td>0500 854198</td>
+                                                            <td>226-4861 Augue. St.</td>
+                                                            <td>Newtown</td>
+                                                            <td>Christmas Island</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Garth</td>
+                                                            <td>(01662) 59083</td>
+                                                            <td>3219 Elit Avenue</td>
+                                                            <td>Ternitz</td>
+                                                            <td>Saint Martin</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Selma</td>
+                                                            <td>0877 118 6905</td>
+                                                            <td>P.O. Box 410, 7331 Nec, St.</td>
+                                                            <td>Glenrothes</td>
+                                                            <td>Korea, North</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            H. Ayuntamiento de Centro
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

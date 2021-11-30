@@ -233,6 +233,47 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="UpdateAnalytic" FunctionName="SIENCHAFAModel.Store.UpdateAnalytic" />
+    <EntitySetMapping Name="PROYPRES22">
+      <EntityTypeMapping TypeName="SIENCHAFAModel.PROYPRES22">
+        <MappingFragment StoreEntitySet="PROYPRES22">
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="TIPOGTO" ColumnName="TIPOGTO" />
+          <ScalarProperty Name="DIC" ColumnName="DIC" />
+          <ScalarProperty Name="NOV" ColumnName="NOV" />
+          <ScalarProperty Name="OCT" ColumnName="OCT" />
+          <ScalarProperty Name="SEP" ColumnName="SEP" />
+          <ScalarProperty Name="AGO" ColumnName="AGO" />
+          <ScalarProperty Name="JUL" ColumnName="JUL" />
+          <ScalarProperty Name="JUN" ColumnName="JUN" />
+          <ScalarProperty Name="MAY" ColumnName="MAY" />
+          <ScalarProperty Name="ABR" ColumnName="ABR" />
+          <ScalarProperty Name="MAR" ColumnName="MAR" />
+          <ScalarProperty Name="FEB" ColumnName="FEB" />
+          <ScalarProperty Name="ene" ColumnName="ene" />
+          <ScalarProperty Name="solicitud" ColumnName="solicitud" />
+          <ScalarProperty Name="PP2022" ColumnName="PP2022" />
+          <ScalarProperty Name="OBS" ColumnName="OBS" />
+          <ScalarProperty Name="IRREDUCTIBLE2022" ColumnName="IRREDUCTIBLE2022" />
+          <ScalarProperty Name="PROMEDIO" ColumnName="PROMEDIO" />
+          <ScalarProperty Name="NOV21" ColumnName="NOV21" />
+          <ScalarProperty Name="P2021" ColumnName="P2021" />
+          <ScalarProperty Name="P2020" ColumnName="P2020" />
+          <ScalarProperty Name="P2019" ColumnName="P2019" />
+          <ScalarProperty Name="P2018" ColumnName="P2018" />
+          <ScalarProperty Name="RECURSO" ColumnName="RECURSO" />
+          <ScalarProperty Name="modmar" ColumnName="modmar" />
+          <ScalarProperty Name="UNIDADADM" ColumnName="UNIDADADM" />
+          <ScalarProperty Name="IDUNIDAD" ColumnName="IDUNIDAD" />
+          <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
+          <ScalarProperty Name="CLV_PAR" ColumnName="CLV_PAR" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="TIPO_PROY" ColumnName="TIPO_PROY" />
+          <ScalarProperty Name="PP22" ColumnName="PP22" />
+          <ScalarProperty Name="CLV_PROG" ColumnName="CLV_PROG" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="PRESUPUESTO_ANALITICOXUNIDAD">
       <EntityTypeMapping TypeName="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD">
         <MappingFragment StoreEntitySet="PRESUPUESTO_ANALITICOXUNIDAD">
@@ -251,6 +292,9 @@
           <ScalarProperty Name="DICIEMBRE_DIS" ColumnName="DICIEMBRE_DIS" />
           <ScalarProperty Name="NOVIEMBRE_DIS" ColumnName="NOVIEMBRE_DIS" />
           <ScalarProperty Name="OCTUBRE_DIS" ColumnName="OCTUBRE_DIS" />
+          <ScalarProperty Name="EJERCIDO" ColumnName="EJERCIDO" />
+          <ScalarProperty Name="DISPONIBLE" ColumnName="DISPONIBLE" />
+          <ScalarProperty Name="COMPROMETIDO" ColumnName="COMPROMETIDO" />
           <ScalarProperty Name="MODIFICADO" ColumnName="MODIFICADO" />
           <ScalarProperty Name="PARTIDA" ColumnName="PARTIDA" />
           <ScalarProperty Name="CLV_PARTID" ColumnName="CLV_PARTID" />

@@ -91,6 +91,48 @@
     <Property Name="id_dependencia" Type="int" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PROYPRES22' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PROYPRES22">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CLV_PROG" Type="nvarchar" MaxLength="50" />
+    <Property Name="PP22" Type="nvarchar" MaxLength="500" />
+    <Property Name="TIPO_PROY" Type="nvarchar" MaxLength="100" />
+    <Property Name="DESCRIPCION" Type="nchar" MaxLength="1000" />
+    <Property Name="CLV_PAR" Type="int" />
+    <Property Name="PARTIDA" Type="nvarchar" MaxLength="500" />
+    <Property Name="IDUNIDAD" Type="int" />
+    <Property Name="UNIDADADM" Type="nvarchar" MaxLength="500" />
+    <Property Name="modmar" Type="nvarchar" MaxLength="50" />
+    <Property Name="RECURSO" Type="nvarchar" MaxLength="500" />
+    <Property Name="P2018" Type="money" />
+    <Property Name="P2019" Type="money" />
+    <Property Name="P2020" Type="money" />
+    <Property Name="P2021" Type="money" />
+    <Property Name="NOV21" Type="money" />
+    <Property Name="PROMEDIO" Type="money" />
+    <Property Name="IRREDUCTIBLE2022" Type="money" />
+    <Property Name="OBS" Type="nvarchar" MaxLength="500" />
+    <Property Name="PP2022" Type="money" />
+    <Property Name="solicitud" Type="money" />
+    <Property Name="ene" Type="money" />
+    <Property Name="FEB" Type="money" />
+    <Property Name="MAR" Type="money" />
+    <Property Name="ABR" Type="money" />
+    <Property Name="MAY" Type="money" />
+    <Property Name="JUN" Type="money" />
+    <Property Name="JUL" Type="money" />
+    <Property Name="AGO" Type="money" />
+    <Property Name="SEP" Type="money" />
+    <Property Name="OCT" Type="money" />
+    <Property Name="NOV" Type="money" />
+    <Property Name="DIC" Type="money" />
+    <Property Name="TIPOGTO" Type="nvarchar" MaxLength="50" />
+    <Property Name="OBSERVACIONES" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTO_ANALITICOXUNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="PRESUPUESTO_ANALITICOXUNIDAD">
     <Key>
@@ -108,6 +150,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTO_ANALITICOXUNIDAD' 
     <Property Name="CLV_PARTID" Type="int" Nullable="false" />
     <Property Name="PARTIDA" Type="varchar" MaxLength="150" />
     <Property Name="MODIFICADO" Type="float" />
+    <Property Name="COMPROMETIDO" Type="float" />
+    <Property Name="DISPONIBLE" Type="float" />
+    <Property Name="EJERCIDO" Type="float" />
     <Property Name="OCTUBRE_DIS" Type="float" />
     <Property Name="NOVIEMBRE_DIS" Type="float" />
     <Property Name="DICIEMBRE_DIS" Type="float" />
@@ -277,6 +322,45 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     <EntitySet Name="Atuevaluacion_demo" EntityType="Self.Atuevaluacion_demo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DETALLEMOMENTOS" EntityType="Self.DETALLEMOMENTOS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Proyectos" EntityType="Self.Proyectos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PROYPRES22" EntityType="Self.PROYPRES22" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PROYPRES22].[Id] AS [Id], 
+    [PROYPRES22].[CLV_PROG] AS [CLV_PROG], 
+    [PROYPRES22].[PP22] AS [PP22], 
+    [PROYPRES22].[TIPO_PROY] AS [TIPO_PROY], 
+    [PROYPRES22].[DESCRIPCION] AS [DESCRIPCION], 
+    [PROYPRES22].[CLV_PAR] AS [CLV_PAR], 
+    [PROYPRES22].[PARTIDA] AS [PARTIDA], 
+    [PROYPRES22].[IDUNIDAD] AS [IDUNIDAD], 
+    [PROYPRES22].[UNIDADADM] AS [UNIDADADM], 
+    [PROYPRES22].[modmar] AS [modmar], 
+    [PROYPRES22].[RECURSO] AS [RECURSO], 
+    [PROYPRES22].[P2018] AS [P2018], 
+    [PROYPRES22].[P2019] AS [P2019], 
+    [PROYPRES22].[P2020] AS [P2020], 
+    [PROYPRES22].[P2021] AS [P2021], 
+    [PROYPRES22].[NOV21] AS [NOV21], 
+    [PROYPRES22].[PROMEDIO] AS [PROMEDIO], 
+    [PROYPRES22].[IRREDUCTIBLE2022] AS [IRREDUCTIBLE2022], 
+    [PROYPRES22].[OBS] AS [OBS], 
+    [PROYPRES22].[PP2022] AS [PP2022], 
+    [PROYPRES22].[solicitud] AS [solicitud], 
+    [PROYPRES22].[ene] AS [ene], 
+    [PROYPRES22].[FEB] AS [FEB], 
+    [PROYPRES22].[MAR] AS [MAR], 
+    [PROYPRES22].[ABR] AS [ABR], 
+    [PROYPRES22].[MAY] AS [MAY], 
+    [PROYPRES22].[JUN] AS [JUN], 
+    [PROYPRES22].[JUL] AS [JUL], 
+    [PROYPRES22].[AGO] AS [AGO], 
+    [PROYPRES22].[SEP] AS [SEP], 
+    [PROYPRES22].[OCT] AS [OCT], 
+    [PROYPRES22].[NOV] AS [NOV], 
+    [PROYPRES22].[DIC] AS [DIC], 
+    [PROYPRES22].[TIPOGTO] AS [TIPOGTO], 
+    [PROYPRES22].[OBSERVACIONES] AS [OBSERVACIONES]
+    FROM [dbo].[PROYPRES22] AS [PROYPRES22]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="Self.PRESUPUESTO_ANALITICOXUNIDAD" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_UNIDADM] AS [CLV_UNIDADM], 
@@ -290,6 +374,9 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     [PRESUPUESTO_ANALITICOXUNIDAD].[CLV_PARTID] AS [CLV_PARTID], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[PARTIDA] AS [PARTIDA], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[MODIFICADO] AS [MODIFICADO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[COMPROMETIDO] AS [COMPROMETIDO], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[DISPONIBLE] AS [DISPONIBLE], 
+    [PRESUPUESTO_ANALITICOXUNIDAD].[EJERCIDO] AS [EJERCIDO], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[OCTUBRE_DIS] AS [OCTUBRE_DIS], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
     [PRESUPUESTO_ANALITICOXUNIDAD].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS], 

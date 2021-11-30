@@ -32,6 +32,13 @@ namespace PresupDisponible.Controllers
             return View(analyticView);
         }
 
+        public ActionResult MasterDetail()
+        {
+            MasterDetailView masterDetailView = new MasterDetailView();
+
+            return View(masterDetailView);
+        }
+
         #region METODOS PARA CARGAR ARCHIVOS
 
         public async System.Threading.Tasks.Task<ActionResult> CargarArchivos(/*HttpPostedFileBase FileInput1, HttpPostedFileBase FileInput2*/)

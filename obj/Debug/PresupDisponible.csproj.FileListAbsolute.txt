@@ -215,4 +215,4 @@ C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\bin\es\Syst
 C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\obj\Debug\PresupDisponible.csproj.CoreCompileInputs.cache
 C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\obj\Debug\PresupDisponible.dll
 C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\obj\Debug\PresupDisponible.pdb
-C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\obj\Debug\PresupDisponible.csproj.CopyComplete
+C:\Users\israel.delacruz\source\repos\israelz11\PresupestoDisponible\obj\Debug\PresupDisponible.csproj.AssemblyReference.cache
