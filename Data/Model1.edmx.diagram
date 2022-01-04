@@ -14,6 +14,8 @@
         <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTOS_ANALITICO_1000" Width="1.5" PointX="3.5" PointY="0.5" IsExpanded="false" />
         <EntityTypeShape EntityType="SIENCHAFAModel.PROYPRES22" Width="1.5" PointX="0.875" PointY="3" IsExpanded="false" />
         <EntityTypeShape EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" Width="1.5" PointX="3.5" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO" Width="1.5" PointX="3.75" PointY="2.75" />
+        <EntityTypeShape EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO_UNIDAD" Width="1.5" PointX="5.5" PointY="2.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

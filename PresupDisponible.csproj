@@ -199,6 +199,12 @@
     <Compile Include="Data\PROYPRES22.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\RESUMEN_COMPARATIVO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\RESUMEN_COMPARATIVO_UNIDAD.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Data\SPARTIDAS.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

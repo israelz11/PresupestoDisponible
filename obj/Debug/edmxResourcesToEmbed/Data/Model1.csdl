@@ -11,6 +11,8 @@
     <FunctionImport Name="UpdateAnalytic" />
     <EntitySet Name="PROYPRES22" EntityType="SIENCHAFAModel.PROYPRES22" />
     <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
+    <EntitySet Name="RESUMEN_COMPARATIVO" EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO" />
+    <EntitySet Name="RESUMEN_COMPARATIVO_UNIDAD" EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO_UNIDAD" />
   </EntityContainer>
   <EntityType Name="Proyectos">
     <Key>
@@ -316,5 +318,39 @@
     <Property Name="OCTUBRE_EJE" Type="Double" />
     <Property Name="NOVIEMBRE_EJE" Type="Double" />
     <Property Name="DICIEMBRE_EJE" Type="Double" />
+  </EntityType>
+  <EntityType Name="RESUMEN_COMPARATIVO">
+    <Key>
+      <PropertyRef Name="PRES18" />
+      <PropertyRef Name="PRES21" />
+      <PropertyRef Name="IRREDUCTIBLE" />
+      <PropertyRef Name="OPE" />
+      <PropertyRef Name="PRO" />
+      <PropertyRef Name="PROY" />
+    </Key>
+    <Property Name="MODMAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRES18" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PRES21" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="IRREDUCTIBLE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="OPE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PRO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PROY" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="RESUMEN_COMPARATIVO_UNIDAD">
+    <Key>
+      <PropertyRef Name="PRES18" />
+      <PropertyRef Name="PRES21" />
+      <PropertyRef Name="IRREDUCTIBLE" />
+      <PropertyRef Name="INVERSION" />
+      <PropertyRef Name="CORRIENTE" />
+    </Key>
+    <Property Name="IDUNIDAD" Type="Int32" />
+    <Property Name="UNIDADADM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="modmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRES18" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PRES21" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="IRREDUCTIBLE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="INVERSION" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CORRIENTE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
   </EntityType>
 </Schema>

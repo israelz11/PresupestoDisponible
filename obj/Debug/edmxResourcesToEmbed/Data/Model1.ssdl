@@ -219,6 +219,44 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO_1000' n
     <Property Name="DICIEMBRE_DIS" Type="float" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.RESUMEN_COMPARATIVO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RESUMEN_COMPARATIVO">
+    <Key>
+      <PropertyRef Name="PRES18" />
+      <PropertyRef Name="PRES21" />
+      <PropertyRef Name="IRREDUCTIBLE" />
+      <PropertyRef Name="OPE" />
+      <PropertyRef Name="PRO" />
+      <PropertyRef Name="PROY" />
+    </Key>
+    <Property Name="MODMAR" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRES18" Type="money" Nullable="false" />
+    <Property Name="PRES21" Type="money" Nullable="false" />
+    <Property Name="IRREDUCTIBLE" Type="money" Nullable="false" />
+    <Property Name="OPE" Type="money" Nullable="false" />
+    <Property Name="PRO" Type="money" Nullable="false" />
+    <Property Name="PROY" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.RESUMEN_COMPARATIVO_UNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="RESUMEN_COMPARATIVO_UNIDAD">
+    <Key>
+      <PropertyRef Name="PRES18" />
+      <PropertyRef Name="PRES21" />
+      <PropertyRef Name="IRREDUCTIBLE" />
+      <PropertyRef Name="INVERSION" />
+      <PropertyRef Name="CORRIENTE" />
+    </Key>
+    <Property Name="IDUNIDAD" Type="int" />
+    <Property Name="UNIDADADM" Type="nvarchar" MaxLength="500" />
+    <Property Name="modmar" Type="nvarchar" MaxLength="50" />
+    <Property Name="PRES18" Type="money" Nullable="false" />
+    <Property Name="PRES21" Type="money" Nullable="false" />
+    <Property Name="IRREDUCTIBLE" Type="money" Nullable="false" />
+    <Property Name="INVERSION" Type="money" Nullable="false" />
+    <Property Name="CORRIENTE" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.SPARTIDAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="SPARTIDAS">
     <Key>
@@ -436,6 +474,29 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     [PRESUPUESTOS_ANALITICO_1000].[NOVIEMBRE_DIS] AS [NOVIEMBRE_DIS], 
     [PRESUPUESTOS_ANALITICO_1000].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
     FROM [dbo].[PRESUPUESTOS_ANALITICO_1000] AS [PRESUPUESTOS_ANALITICO_1000]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RESUMEN_COMPARATIVO" EntityType="Self.RESUMEN_COMPARATIVO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RESUMEN_COMPARATIVO].[MODMAR] AS [MODMAR], 
+    [RESUMEN_COMPARATIVO].[PRES18] AS [PRES18], 
+    [RESUMEN_COMPARATIVO].[PRES21] AS [PRES21], 
+    [RESUMEN_COMPARATIVO].[IRREDUCTIBLE] AS [IRREDUCTIBLE], 
+    [RESUMEN_COMPARATIVO].[OPE] AS [OPE], 
+    [RESUMEN_COMPARATIVO].[PRO] AS [PRO], 
+    [RESUMEN_COMPARATIVO].[PROY] AS [PROY]
+    FROM [dbo].[RESUMEN_COMPARATIVO] AS [RESUMEN_COMPARATIVO]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="RESUMEN_COMPARATIVO_UNIDAD" EntityType="Self.RESUMEN_COMPARATIVO_UNIDAD" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RESUMEN_COMPARATIVO_UNIDAD].[IDUNIDAD] AS [IDUNIDAD], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[UNIDADADM] AS [UNIDADADM], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[modmar] AS [modmar], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[PRES18] AS [PRES18], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[PRES21] AS [PRES21], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[IRREDUCTIBLE] AS [IRREDUCTIBLE], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[INVERSION] AS [INVERSION], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[CORRIENTE] AS [CORRIENTE]
+    FROM [dbo].[RESUMEN_COMPARATIVO_UNIDAD] AS [RESUMEN_COMPARATIVO_UNIDAD]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="SPARTIDAS" EntityType="Self.SPARTIDAS" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

@@ -224,6 +224,44 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.PRESUPUESTOS_ANALITICO_1000' n
           <Property Name="DICIEMBRE_DIS" Type="float" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.RESUMEN_COMPARATIVO' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="RESUMEN_COMPARATIVO">
+          <Key>
+            <PropertyRef Name="PRES18" />
+            <PropertyRef Name="PRES21" />
+            <PropertyRef Name="IRREDUCTIBLE" />
+            <PropertyRef Name="OPE" />
+            <PropertyRef Name="PRO" />
+            <PropertyRef Name="PROY" />
+          </Key>
+          <Property Name="MODMAR" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRES18" Type="money" Nullable="false" />
+          <Property Name="PRES21" Type="money" Nullable="false" />
+          <Property Name="IRREDUCTIBLE" Type="money" Nullable="false" />
+          <Property Name="OPE" Type="money" Nullable="false" />
+          <Property Name="PRO" Type="money" Nullable="false" />
+          <Property Name="PROY" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.RESUMEN_COMPARATIVO_UNIDAD' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="RESUMEN_COMPARATIVO_UNIDAD">
+          <Key>
+            <PropertyRef Name="PRES18" />
+            <PropertyRef Name="PRES21" />
+            <PropertyRef Name="IRREDUCTIBLE" />
+            <PropertyRef Name="INVERSION" />
+            <PropertyRef Name="CORRIENTE" />
+          </Key>
+          <Property Name="IDUNIDAD" Type="int" />
+          <Property Name="UNIDADADM" Type="nvarchar" MaxLength="500" />
+          <Property Name="modmar" Type="nvarchar" MaxLength="50" />
+          <Property Name="PRES18" Type="money" Nullable="false" />
+          <Property Name="PRES21" Type="money" Nullable="false" />
+          <Property Name="IRREDUCTIBLE" Type="money" Nullable="false" />
+          <Property Name="INVERSION" Type="money" Nullable="false" />
+          <Property Name="CORRIENTE" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.SPARTIDAS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="SPARTIDAS">
           <Key>
@@ -442,6 +480,29 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
     [PRESUPUESTOS_ANALITICO_1000].[DICIEMBRE_DIS] AS [DICIEMBRE_DIS]
     FROM [dbo].[PRESUPUESTOS_ANALITICO_1000] AS [PRESUPUESTOS_ANALITICO_1000]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="RESUMEN_COMPARATIVO" EntityType="Self.RESUMEN_COMPARATIVO" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RESUMEN_COMPARATIVO].[MODMAR] AS [MODMAR], 
+    [RESUMEN_COMPARATIVO].[PRES18] AS [PRES18], 
+    [RESUMEN_COMPARATIVO].[PRES21] AS [PRES21], 
+    [RESUMEN_COMPARATIVO].[IRREDUCTIBLE] AS [IRREDUCTIBLE], 
+    [RESUMEN_COMPARATIVO].[OPE] AS [OPE], 
+    [RESUMEN_COMPARATIVO].[PRO] AS [PRO], 
+    [RESUMEN_COMPARATIVO].[PROY] AS [PROY]
+    FROM [dbo].[RESUMEN_COMPARATIVO] AS [RESUMEN_COMPARATIVO]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RESUMEN_COMPARATIVO_UNIDAD" EntityType="Self.RESUMEN_COMPARATIVO_UNIDAD" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RESUMEN_COMPARATIVO_UNIDAD].[IDUNIDAD] AS [IDUNIDAD], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[UNIDADADM] AS [UNIDADADM], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[modmar] AS [modmar], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[PRES18] AS [PRES18], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[PRES21] AS [PRES21], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[IRREDUCTIBLE] AS [IRREDUCTIBLE], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[INVERSION] AS [INVERSION], 
+    [RESUMEN_COMPARATIVO_UNIDAD].[CORRIENTE] AS [CORRIENTE]
+    FROM [dbo].[RESUMEN_COMPARATIVO_UNIDAD] AS [RESUMEN_COMPARATIVO_UNIDAD]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="SPARTIDAS" EntityType="Self.SPARTIDAS" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SPARTIDAS].[ID_PROYECTO] AS [ID_PROYECTO], 
@@ -548,6 +609,8 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <FunctionImport Name="UpdateAnalytic" />
           <EntitySet Name="PROYPRES22" EntityType="SIENCHAFAModel.PROYPRES22" />
           <EntitySet Name="PRESUPUESTO_ANALITICOXUNIDAD" EntityType="SIENCHAFAModel.PRESUPUESTO_ANALITICOXUNIDAD" />
+          <EntitySet Name="RESUMEN_COMPARATIVO" EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO" />
+          <EntitySet Name="RESUMEN_COMPARATIVO_UNIDAD" EntityType="SIENCHAFAModel.RESUMEN_COMPARATIVO_UNIDAD" />
         </EntityContainer>
         <EntityType Name="Proyectos">
           <Key>
@@ -853,6 +916,40 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
           <Property Name="OCTUBRE_EJE" Type="Double" />
           <Property Name="NOVIEMBRE_EJE" Type="Double" />
           <Property Name="DICIEMBRE_EJE" Type="Double" />
+        </EntityType>
+        <EntityType Name="RESUMEN_COMPARATIVO">
+          <Key>
+            <PropertyRef Name="PRES18" />
+            <PropertyRef Name="PRES21" />
+            <PropertyRef Name="IRREDUCTIBLE" />
+            <PropertyRef Name="OPE" />
+            <PropertyRef Name="PRO" />
+            <PropertyRef Name="PROY" />
+          </Key>
+          <Property Name="MODMAR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRES18" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PRES21" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="IRREDUCTIBLE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="OPE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PRO" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PROY" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="RESUMEN_COMPARATIVO_UNIDAD">
+          <Key>
+            <PropertyRef Name="PRES18" />
+            <PropertyRef Name="PRES21" />
+            <PropertyRef Name="IRREDUCTIBLE" />
+            <PropertyRef Name="INVERSION" />
+            <PropertyRef Name="CORRIENTE" />
+          </Key>
+          <Property Name="IDUNIDAD" Type="Int32" />
+          <Property Name="UNIDADADM" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="modmar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRES18" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PRES21" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="IRREDUCTIBLE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="INVERSION" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CORRIENTE" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1165,6 +1262,33 @@ advertencia 6002: La tabla o vista 'SIENCHAFA.dbo.VtPresupuesto' no tiene defini
                 <ScalarProperty Name="CLV_RECURSO" ColumnName="CLV_RECURSO" />
                 <ScalarProperty Name="UNIDADM" ColumnName="UNIDADM" />
                 <ScalarProperty Name="CLV_UNIDADM" ColumnName="CLV_UNIDADM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESUMEN_COMPARATIVO">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.RESUMEN_COMPARATIVO">
+              <MappingFragment StoreEntitySet="RESUMEN_COMPARATIVO">
+                <ScalarProperty Name="PROY" ColumnName="PROY" />
+                <ScalarProperty Name="PRO" ColumnName="PRO" />
+                <ScalarProperty Name="OPE" ColumnName="OPE" />
+                <ScalarProperty Name="IRREDUCTIBLE" ColumnName="IRREDUCTIBLE" />
+                <ScalarProperty Name="PRES21" ColumnName="PRES21" />
+                <ScalarProperty Name="PRES18" ColumnName="PRES18" />
+                <ScalarProperty Name="MODMAR" ColumnName="MODMAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESUMEN_COMPARATIVO_UNIDAD">
+            <EntityTypeMapping TypeName="SIENCHAFAModel.RESUMEN_COMPARATIVO_UNIDAD">
+              <MappingFragment StoreEntitySet="RESUMEN_COMPARATIVO_UNIDAD">
+                <ScalarProperty Name="CORRIENTE" ColumnName="CORRIENTE" />
+                <ScalarProperty Name="INVERSION" ColumnName="INVERSION" />
+                <ScalarProperty Name="IRREDUCTIBLE" ColumnName="IRREDUCTIBLE" />
+                <ScalarProperty Name="PRES21" ColumnName="PRES21" />
+                <ScalarProperty Name="PRES18" ColumnName="PRES18" />
+                <ScalarProperty Name="modmar" ColumnName="modmar" />
+                <ScalarProperty Name="UNIDADADM" ColumnName="UNIDADADM" />
+                <ScalarProperty Name="IDUNIDAD" ColumnName="IDUNIDAD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

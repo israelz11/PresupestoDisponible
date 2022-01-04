@@ -309,5 +309,32 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="RESUMEN_COMPARATIVO">
+      <EntityTypeMapping TypeName="SIENCHAFAModel.RESUMEN_COMPARATIVO">
+        <MappingFragment StoreEntitySet="RESUMEN_COMPARATIVO">
+          <ScalarProperty Name="PROY" ColumnName="PROY" />
+          <ScalarProperty Name="PRO" ColumnName="PRO" />
+          <ScalarProperty Name="OPE" ColumnName="OPE" />
+          <ScalarProperty Name="IRREDUCTIBLE" ColumnName="IRREDUCTIBLE" />
+          <ScalarProperty Name="PRES21" ColumnName="PRES21" />
+          <ScalarProperty Name="PRES18" ColumnName="PRES18" />
+          <ScalarProperty Name="MODMAR" ColumnName="MODMAR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESUMEN_COMPARATIVO_UNIDAD">
+      <EntityTypeMapping TypeName="SIENCHAFAModel.RESUMEN_COMPARATIVO_UNIDAD">
+        <MappingFragment StoreEntitySet="RESUMEN_COMPARATIVO_UNIDAD">
+          <ScalarProperty Name="CORRIENTE" ColumnName="CORRIENTE" />
+          <ScalarProperty Name="INVERSION" ColumnName="INVERSION" />
+          <ScalarProperty Name="IRREDUCTIBLE" ColumnName="IRREDUCTIBLE" />
+          <ScalarProperty Name="PRES21" ColumnName="PRES21" />
+          <ScalarProperty Name="PRES18" ColumnName="PRES18" />
+          <ScalarProperty Name="modmar" ColumnName="modmar" />
+          <ScalarProperty Name="UNIDADADM" ColumnName="UNIDADADM" />
+          <ScalarProperty Name="IDUNIDAD" ColumnName="IDUNIDAD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
